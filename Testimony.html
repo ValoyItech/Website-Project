@@ -8,33 +8,23 @@
         body {
             margin: 0;
             padding: 0;
-            background: url('images/Head.jpg') no-repeat center center fixed;
+            background: url('images/Me.jpg') no-repeat center center fixed;
             background-size: cover;
-            color: white;
             font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-end;
             height: 100vh;
         }
 
-        .image-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-        }
-
-        img {
-            max-width: 40%;
+        .logo {
+            margin-bottom: 20px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <div class="image-container">
-        <img src="images/Logo.jpg" alt="Logo">
-        <img src="images/Me.jpg" alt="Me">
-    </div>
+    <img src="images/Logo.jpg" alt="Logo" class="logo" onclick="location.href='index.html'" style="width: 150px;">
 </body>
 </html>
