@@ -10,8 +10,8 @@
             padding: 0;
             background: url('images/Background.jpg') no-repeat center center fixed;
             background-size: cover;
-            color: white;
             font-family: Arial, sans-serif;
+            color: white;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -19,18 +19,39 @@
             height: 100vh;
         }
 
-        img {
-            max-width: 90%;
+        .social-icons {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
         }
 
-        h1 {
-            margin: 20px 0;
+        .social-icons a img {
+            height: 50px;
+            width: 50px;
+        }
+
+        .logo {
+            cursor: pointer;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <img src="images/Logo.jpg" alt="Logo" style="max-width: 300px;">
-    <h1>Projects will be added here</h1>
-    <img src="images/Me.jpg" alt="Image" style="max-width: 150px;">
+    <img src="images/Logo.jpg" alt="Logo" class="logo" onclick="location.href='index.html'" style="width: 200px;">
+    
+    <div class="social-icons">
+        <a href="https://www.linkedin.com/company/valoyitech/" target="_blank">
+            <img src="images/LinkedIn.png" alt="LinkedIn">
+        </a>
+        <a href="https://www.tiktok.com/@hector_baloyi?_t=ZM-8tPfaSIHVzh&_r=1" target="_blank">
+            <img src="images/Tiktok.png" alt="TikTok">
+        </a>
+        <a href="https://x.com/hectaville?t=I-ZThF12ofXWgUcW4emY_w&s=09" target="_blank">
+            <img src="images/X.png" alt="X">
+        </a>
+        <a href="https://linktr.ee/valoyitech" target="_blank">
+            <img src="images/LinkTree.png" alt="LinkTree">
+        </a>
+    </div>
 </body>
 </html>
