@@ -76,4 +76,103 @@
             }
 
             nav ul li {
-                margin:
+                margin: 10px 0;
+            }
+
+            nav .menu-toggle {
+                display: block;
+                cursor: pointer;
+                color: white;
+                font-size: 20px;
+            }
+        }
+
+        nav .menu-toggle {
+            display: none;
+        }
+
+        section {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        h2 {
+            border-bottom: 2px solid #00ccff;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .social-icons img {
+            height: 30px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        footer a {
+            color: #00ccff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/Logo.jpg" alt="Logo">
+        <h1>
+            ValoyItech
+            <img src="images/Me.jpg" alt="Image" style="height: 50px; margin-left: 10px;">
+        </h1>
+        <nav>
+            <div class="menu-toggle">☰</div>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="Project.html">Projects</a></li>
+                <li><a href="Testimony.html">Testimony</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="services">
+        <h2>Services</h2>
+        <ul>
+            <li><strong>Network Installation:</strong> Professional network setup for homes and businesses to ensure reliable connectivity.</li>
+            <li><strong>Surveillance Installation:</strong> High-quality CCTV and security camera installations for property monitoring.</li>
+            <li><strong>Hardware and Software Troubleshooting:</strong> Efficient diagnostics and solutions for any device issues.</li>
+            <li><strong>Web Design:</strong> Creation of stunning, user-friendly websites tailored to your needs.</li>
+            <li><strong>Mobile Devices Troubleshooting:</strong> Fast and effective repairs for mobile phones and tablets.</li>
+            <li><strong>Cybersecurity Solutions:</strong> Protecting your digital assets with cutting-edge security practices.</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p><strong>Phone:</strong> 0792343701</p>
+        <p><strong>Email:</strong> <a href="mailto:hectaville@live.com" style="color: #00ccff;">hectaville@live.com</a></p>
+        <p><strong>Social Media:</strong></p>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/company/valoyitech/" target="_blank"><img src="images/LinkedIn.png" alt="LinkedIn"></a>
+            <a href="https://www.tiktok.com/@hector_baloyi?_t=ZM-8tPfaSIHVzh&_r=1" target="_blank"><img src="images/Tiktok.png" alt="TikTok"></a>
+            <a href="https://x.com/hectaville?t=I-ZThF12ofXWgUcW4emY_w&s=09" target="_blank"><img src="images/X.png" alt="X"></a>
+            <a href="https://linktr.ee/valoyitech" target="_blank"><img src="images/LinkTree.png" alt="LinkTree"></a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 ValoyItech | Designed by Hector Baloyi</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('nav ul');
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
