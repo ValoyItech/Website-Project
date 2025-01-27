@@ -17,6 +17,7 @@
         header {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             padding: 10px 20px;
             background-color: rgba(0, 0, 0, 0.7);
         }
@@ -33,62 +34,65 @@
         }
 
         nav {
-            margin-left: auto;
+            position: relative;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 18px;
+            color: white;
+            font-weight: bold;
         }
 
         nav ul {
-            display: flex;
             list-style: none;
             margin: 0;
             padding: 0;
+            display: flex;
         }
 
-        nav li {
+        nav ul li {
             margin: 0 10px;
         }
 
-        nav a {
+        nav ul li a {
             text-decoration: none;
             color: white;
             font-weight: bold;
         }
 
-        nav a:hover {
+        nav ul li a:hover {
             color: #00ccff;
         }
 
-        /* Dropdown menu for mobile */
+        nav ul.open {
+            display: block;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            width: 100%;
+            text-align: center;
+        }
+
+        nav ul.open li {
+            margin: 10px 0;
+        }
+
         @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
             nav ul {
                 display: none;
                 flex-direction: column;
-                background-color: rgba(0, 0, 0, 0.8);
-                position: absolute;
-                top: 60px;
-                right: 20px;
-                width: 150px;
-                border-radius: 5px;
-                padding: 10px 0;
             }
 
             nav ul.open {
-                display: flex;
-            }
-
-            nav ul li {
-                margin: 10px 0;
-            }
-
-            nav .menu-toggle {
                 display: block;
-                cursor: pointer;
-                color: white;
-                font-size: 20px;
             }
-        }
-
-        nav .menu-toggle {
-            display: none;
         }
 
         section {
@@ -102,10 +106,34 @@
             margin-bottom: 10px;
         }
 
-        .social-icons img {
-            height: 30px;
-            margin-right: 10px;
-            vertical-align: middle;
+        .contact-card {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: white;
+            color: black;
+            border-radius: 10px;
+        }
+
+        .contact-card input,
+        .contact-card textarea {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-card button {
+            background-color: #00ccff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-card button:hover {
+            background-color: #008fb3;
         }
 
         footer {
@@ -118,6 +146,17 @@
             color: #00ccff;
             text-decoration: none;
         }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .social-icons a img {
+            height: 30px;
+            width: 30px;
+        }
     </style>
 </head>
 <body>
@@ -128,7 +167,7 @@
             <img src="images/Me.jpg" alt="Image" style="height: 50px; margin-left: 10px;">
         </h1>
         <nav>
-            <div class="menu-toggle">☰</div>
+            <div class="menu-toggle">Menu</div>
             <ul>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -156,10 +195,28 @@
         <p><strong>Email:</strong> <a href="mailto:hectaville@live.com" style="color: #00ccff;">hectaville@live.com</a></p>
         <p><strong>Social Media:</strong></p>
         <div class="social-icons">
-            <a href="https://www.linkedin.com/company/valoyitech/" target="_blank"><img src="images/LinkedIn.png" alt="LinkedIn"></a>
-            <a href="https://www.tiktok.com/@hector_baloyi?_t=ZM-8tPfaSIHVzh&_r=1" target="_blank"><img src="images/Tiktok.png" alt="TikTok"></a>
-            <a href="https://x.com/hectaville?t=I-ZThF12ofXWgUcW4emY_w&s=09" target="_blank"><img src="images/X.png" alt="X"></a>
-            <a href="https://linktr.ee/valoyitech" target="_blank"><img src="images/Linktree.png" alt="LinkTree"></a>
+            <a href="https://www.linkedin.com/company/valoyitech/" target="_blank">
+                <img src="images/LinkedIn.png" alt="LinkedIn">
+            </a>
+            <a href="https://www.tiktok.com/@hector_baloyi?_t=ZM-8tPfaSIHVzh&_r=1" target="_blank">
+                <img src="images/Tiktok.png" alt="Tiktok">
+            </a>
+            <a href="https://x.com/hectaville?t=I-ZThF12ofXWgUcW4emY_w&s=09" target="_blank">
+                <img src="images/X.png" alt="X">
+            </a>
+            <a href="https://linktr.ee/valoyitech" target="_blank">
+                <img src="images/LinkTree.png" alt="LinkTree">
+            </a>
+        </div>
+
+        <div class="contact-card">
+            <h3>Send Us a Message</h3>
+            <form action="mailto:hectaville@live.com" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
         </div>
     </section>
 
@@ -170,9 +227,10 @@
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const navMenu = document.querySelector('nav ul');
+
         menuToggle.addEventListener('click', () => {
             navMenu.classList.toggle('open');
         });
     </script>
 </body>
-</html>
+    </html>
