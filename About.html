@@ -9,29 +9,30 @@
             margin: 0;
             padding: 0;
             background: url('images/Me.jpg') no-repeat center center fixed;
-            background-size: cover;
+            background-size: 100% auto; /* Ensures width fits while allowing height to grow */
             font-family: Arial, sans-serif;
-            color: #FFFFFF; /* Ensures text is visible on a dark or detailed background */
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Adds contrast for better readability */
+            color: #FFFFFF; /* White text for visibility */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-end;
-            height: 100vh;
+            justify-content: flex-start;
+            min-height: 100vh; /* Ensures content area is fully visible */
             text-align: center;
+            overflow: auto; /* Allows scrolling if text overflows */
         }
 
         .logo {
-            margin-bottom: 20px;
+            margin-top: 20px;
             cursor: pointer;
         }
 
         .about {
-            background-color: rgba(0, 0, 0, 0.6); /* Adds a transparent background for better readability */
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
             padding: 20px;
             border-radius: 10px;
             max-width: 800px;
-            margin-bottom: 50px;
+            margin: 20px;
         }
 
         h1 {
