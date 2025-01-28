@@ -47,6 +47,9 @@
             font-size: 18px;
             color: white;
             font-weight: bold;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
         }
 
         nav ul {
@@ -70,20 +73,6 @@
             color: #00ccff;
         }
 
-        nav ul.open {
-            display: block;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: rgba(0, 0, 0, 0.8);
-            width: 100%;
-            text-align: center;
-        }
-
-        nav ul.open li {
-            margin: 10px 0;
-        }
-
         @media (max-width: 768px) {
             .menu-toggle {
                 display: block;
@@ -92,10 +81,21 @@
             nav ul {
                 display: none;
                 flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                background-color: rgba(0, 0, 0, 0.8);
+                text-align: center;
+                padding: 10px 0;
             }
 
             nav ul.open {
-                display: block;
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
             }
         }
 
@@ -109,48 +109,6 @@
             border-bottom: 2px solid #00ccff;
             display: inline-block;
             margin-bottom: 10px;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 10px;
-        }
-
-        .social-icons img {
-            height: 60px;
-            width: 60px;
-        }
-
-        .contact-card {
-            margin-top: 20px;
-            padding: 15px;
-            background-color: white;
-            color: black;
-            border-radius: 10px;
-        }
-
-        .contact-card input,
-        .contact-card textarea {
-            width: 100%;
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .contact-card button {
-            background-color: #00ccff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .contact-card button:hover {
-            background-color: #008fb3;
         }
 
         footer {
@@ -171,8 +129,8 @@
         <span class="company-name">ValoyItech</span>
         <img src="images/Me.jpg" alt="Image" class="profile-image">
         <nav>
-            <div class="menu-toggle">Menu</div>
-            <ul>
+            <div class="menu-toggle" onclick="toggleMenu()">Menu</div>
+            <ul id="menu">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="Project.html">Projects</a></li>
@@ -183,37 +141,28 @@
 
     <section id="services">
         <h2>Services</h2>
-        <p><strong>Network Installation:</strong> Professional network setup for homes and businesses to ensure reliable connectivity.</p>
-        <p><strong>Surveillance Installation:</strong> High-quality CCTV and security camera installations for property monitoring.</p>
-        <p><strong>Hardware and Software Troubleshooting:</strong> Efficient diagnostics and solutions for any device issues.</p>
-        <p><strong>Web Design:</strong> Creation of stunning, user-friendly websites tailored to your needs.</p>
-        <p><strong>Mobile Devices Troubleshooting:</strong> Fast and effective repairs for mobile phones and tablets.</p>
-        <p><strong>Cybersecurity Solutions:</strong> Protecting your digital assets with cutting-edge security practices.</p>
+        <p><strong>Network Installation:</strong> Professional network setup for homes and businesses.</p>
+        <p><strong>Surveillance Installation:</strong> High-quality CCTV and security camera installations.</p>
+        <p><strong>Hardware and Software Troubleshooting:</strong> Diagnostics and solutions for device issues.</p>
+        <p><strong>Web Design:</strong> User-friendly websites tailored to your needs.</p>
+        <p><strong>Mobile Devices Troubleshooting:</strong> Repairs for mobile phones and tablets.</p>
     </section>
 
     <section id="contact">
         <h2>Contact</h2>
         <p><strong>Phone:</strong> 0792343701</p>
         <p><strong>Email:</strong> <a href="mailto:valoyitech@outlook.com" style="color: #00ccff;">valoyitech@outlook.com</a></p>
-        <h2>Social Media</h2>
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/company/valoyitech/" target="_blank">
-                <img src="images/LinkedIn.png" alt="LinkedIn">
-            </a>
-            <a href="https://www.tiktok.com/@valoyitech?_t=ZM-8tR4QYSrlf4&_r=1" target="_blank">
-                <img src="images/Tiktok.png" alt="Tiktok">
-            </a>
-            <a href="https://x.com/ValoyItech?t=HQNVasWNyhBW3S54cRwVEQ&s=09" target="_blank">
-                <img src="images/X.png" alt="X">
-            </a>
-            <a href="https://linktr.ee/valoyitech" target="_blank">
-                <img src="images/Linktree.png" alt="LinkTree">
-            </a>
-        </div>
     </section>
 
     <footer>
         <p>&copy; 2025 ValoyItech | Designed by Hector Baloyi</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.classList.toggle("open");
+        }
+    </script>
 </body>
-</html>
+    </html>
