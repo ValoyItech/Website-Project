@@ -38,6 +38,23 @@
             font-weight: bold;
         }
 
+        .separator {
+            width: 80%;
+            height: 2px;
+            background: white;
+            margin: 20px 0;
+        }
+
+        .content-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
         .slider-container {
             position: relative;
             width: 90%;
@@ -83,14 +100,20 @@
             right: 10px;
         }
 
-        .description {
+        /* Embedded YouTube Video */
+        .video-container {
             width: 90%;
             max-width: 800px;
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
             margin: 20px auto;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 15px;
+        }
+        .video-container iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
             border-radius: 8px;
-            text-align: center;
         }
 
         .social-icons {
@@ -140,6 +163,8 @@
 <body>
     <img src="images/Logo.jpg" alt="Logo" class="logo" onclick="location.href='Index.html'">
     <h1>Finished Projects</h1>
+    
+    <!-- Web Design Project -->
     <h2>Web Design</h2>
     <div class="slider-container">
         <button class="nav-button prev" onclick="moveSlide(-1)">&#10094;</button>
@@ -152,9 +177,22 @@
         </div>
         <button class="nav-button next" onclick="moveSlide(1)">&#10095;</button>
     </div>
-    <div class="description">
+    <div class="content-container">
         <p>At Valoyitech, we specialize in creating stunning, responsive, and user-friendly websites tailored to our clients' needs. Our team ensures high-quality designs that enhance user experience and engagement, helping businesses establish a strong online presence.</p>
     </div>
+
+    <!-- Separator Line -->
+    <div class="separator"></div>
+
+    <!-- SQL & Backend Project -->
+    <h2>SQL & Backend</h2>
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/r-4VWWRHEXo?si=af0qx_IDLNvZEv7J" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="content-container">
+        <p>Querying a database without typing anything</p>
+    </div>
+
     <h2>Follow Us</h2>
     <div class="social-icons">
         <a href="https://www.linkedin.com/company/valoyitech/" target="_blank">
@@ -169,12 +207,6 @@
         <a href="https://linktr.ee/valoyitech" target="_blank">
             <img src="images/Linktree.png" alt="LinkTree">
         </a>
-    </div>
-
-    <!-- Fullscreen Modal -->
-    <div class="fullscreen-modal" id="fullscreen-modal">
-        <span class="close-modal" onclick="closeFullScreen()">&times;</span>
-        <img id="fullscreen-image" src="" alt="Fullscreen Image">
     </div>
 
     <script>
@@ -199,4 +231,4 @@
         }
     </script>
 </body>
-</html>
+    </html>
