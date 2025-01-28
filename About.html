@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testimony</title>
+    <title>About Me</title>
     <style>
         body {
             margin: 0;
@@ -11,20 +11,65 @@
             background: url('images/Me.jpg') no-repeat center center fixed;
             background-size: cover;
             font-family: Arial, sans-serif;
+            color: #FFFFFF; /* Ensures text is visible on a dark or detailed background */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Adds contrast for better readability */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-end;
             height: 100vh;
+            text-align: center;
         }
 
         .logo {
             margin-bottom: 20px;
             cursor: pointer;
         }
+
+        .about {
+            background-color: rgba(0, 0, 0, 0.6); /* Adds a transparent background for better readability */
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            text-align: left;
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body>
     <img src="images/Logo.jpg" alt="Logo" class="logo" onclick="location.href='Index.html'" style="width: 150px;">
+    <div class="about">
+        <h1>About Me: Hector Baloyi</h1>
+        <p>With over a decade of experience in IT, I bring a comprehensive skill set encompassing cybersecurity, networking, systems administration, hardware troubleshooting, and IT solutions tailored to meet your needs.</p>
+        <p>I specialize in configuring, administering, and troubleshooting routers, switches, and Windows Server services, including DNS, Active Directory, Print, File, Mail, Internet, DHCP, and Virtual Machines. As an ethical hacker, I utilize advanced networking tools to monitor, secure, and defend systems from potential threats. I also excel in automating tasks using Bash scripts and Python to enhance efficiency.</p>
+        <p>My expertise extends to Linux systems, including Kali Linux, as well as Veeam backup solutions for seamless data protection. Whether working with on-site infrastructure or cloud environments, I am proficient in managing platforms like AWS and Azure, leveraging their features for effective and secure network management.</p>
+        <p>In addition to core IT services, I also offer:</p>
+        <ul>
+            <li><strong>Website Design and Development:</strong> Creating responsive, user-friendly websites to help businesses establish a strong online presence.</li>
+            <li><strong>Surveillance System Installation:</strong> Providing reliable security solutions with expert installation of CCTV and monitoring systems to safeguard your property.</li>
+        </ul>
+        <p>I am passionate about staying ahead of the curve by continuously learning and applying industry standards such as GRC, ISO, NIST, and other best practices. My approach combines technical expertise with soft skills like adaptability, leadership, problem-solving, and empathy to deliver tailored IT solutions that align with your goals.</p>
+        <p>Let me help you transform your IT challenges into opportunities for growth and innovation.</p>
+    </div>
 </body>
 </html>
