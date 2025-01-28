@@ -9,9 +9,10 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            color: white;
             background: url('images/Background.jpg') no-repeat center center fixed;
             background-size: cover;
-            color: white;
+            overflow-x: hidden;
         }
 
         header {
@@ -103,12 +104,26 @@
             padding: 20px;
             background-color: rgba(0, 0, 0, 0.7);
             text-align: center;
+            margin: 10px;
+            border-radius: 10px;
         }
 
         h2 {
             border-bottom: 2px solid #00ccff;
             display: inline-block;
             margin-bottom: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .social-icons img {
+            height: 60px;
+            width: 60px;
         }
 
         footer {
@@ -152,6 +167,21 @@
         <h2>Contact</h2>
         <p><strong>Phone:</strong> 0792343701</p>
         <p><strong>Email:</strong> <a href="mailto:valoyitech@outlook.com" style="color: #00ccff;">valoyitech@outlook.com</a></p>
+        <h2>Social Media</h2>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/company/valoyitech/" target="_blank">
+                <img src="images/LinkedIn.png" alt="LinkedIn">
+            </a>
+            <a href="https://www.tiktok.com/@valoyitech?_t=ZM-8tR4QYSrlf4&_r=1" target="_blank">
+                <img src="images/Tiktok.png" alt="TikTok">
+            </a>
+            <a href="https://x.com/ValoyItech?t=HQNVasWNyhBW3S54cRwVEQ&s=09" target="_blank">
+                <img src="images/X.png" alt="X">
+            </a>
+            <a href="https://linktr.ee/valoyitech" target="_blank">
+                <img src="images/Linktree.png" alt="LinkTree">
+            </a>
+        </div>
     </section>
 
     <footer>
