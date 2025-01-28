@@ -15,30 +15,106 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .social-icons a img {
-            height: 50px;
-            width: 50px;
         }
 
         .logo {
             cursor: pointer;
             margin-top: 20px;
+            width: 200px;
+        }
+
+        h1, h2 {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 60%;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        .slider {
+            display: flex;
+            width: 500%;
+            transition: transform 1s ease-in-out;
+        }
+        .slide {
+            width: 20%;
+            flex-shrink: 0;
+        }
+        .slide img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+
+        .description {
+            width: 60%;
+            margin: 20px auto;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .social-icons a img {
+            height: 30px;
+            width: 30px;
         }
     </style>
 </head>
 <body>
-    <img src="images/Logo.jpg" alt="Logo" class="logo" onclick="location.href='Index.html'" style="width: 200px;">
-    
+    <img src="images/Logo.jpg" alt="Logo" class="logo" onclick="location.href='Index.html'">
+    <h1>Finished Projects</h1>
+    <h2>Web Design</h2>
+    <div class="slider-container">
+        <button class="nav-button prev" onclick="moveSlide(-1)">&#10094;</button>
+        <div class="slider" id="slider">
+            <div class="slide"><img src="images/Web1.png" alt="Web Design 1"></div>
+            <div class="slide"><img src="images/Web2.png" alt="Web Design 2"></div>
+            <div class="slide"><img src="images/Web3.png" alt="Web Design 3"></div>
+            <div class="slide"><img src="images/Web4.png" alt="Web Design 4"></div>
+            <div class="slide"><img src="images/Web5.png" alt="Web Design 5"></div>
+        </div>
+        <button class="nav-button next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+    <div class="description">
+        <p>At Valoyitech, we specialize in creating stunning, responsive, and user-friendly websites tailored to our clients' needs. Our team ensures high-quality designs that enhance user experience and engagement, helping businesses establish a strong online presence.</p>
+    </div>
+    <h2>Follow Us</h2>
     <div class="social-icons">
         <a href="https://www.linkedin.com/company/valoyitech/" target="_blank">
             <img src="images/LinkedIn.png" alt="LinkedIn">
@@ -53,5 +129,20 @@
             <img src="images/Linktree.png" alt="LinkTree">
         </a>
     </div>
+    <script>
+        let index = 0;
+        function moveSlide(direction) {
+            const slider = document.getElementById('slider');
+            const totalSlides = document.querySelectorAll('.slide').length;
+            index = (index + direction + totalSlides) % totalSlides;
+            slider.style.transform = `translateX(${-index * 100}%)`;
+        }
+
+        function autoSlide() {
+            moveSlide(1);
+            setTimeout(autoSlide, 5000);
+        }
+        setTimeout(autoSlide, 5000);
+    </script>
 </body>
 </html>
