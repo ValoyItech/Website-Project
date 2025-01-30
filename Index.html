@@ -7,6 +7,7 @@
     <meta name="keywords" content="Network Installation, Surveillance, Web Design, Cybersecurity, IT Support, Computer Troubleshooting">
     <meta name="author" content="Hector Baloyi">
     <title>ValoyItech - IT Solutions for Businesses</title>
+    
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,31 +24,20 @@
             justify-content: space-between;
             padding: 15px 30px;
             background-color: rgba(0, 0, 0, 0.7);
+            animation: fadeInDown 1s ease-in-out;
         }
 
         header img {
             height: 80px;
             margin-right: 20px;
+            animation: bounceIn 1s ease-in-out;
         }
 
         .company-name {
             font-size: 32px;
             font-weight: bold;
-        }
-
-        nav {
-            position: relative;
-        }
-
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-        }
-
-        .menu-toggle img {
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
         }
 
         nav ul {
@@ -55,6 +45,8 @@
             display: flex;
             margin: 0;
             padding: 0;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
         }
 
         nav ul li {
@@ -65,22 +57,39 @@
             text-decoration: none;
             color: white;
             font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #00ccff;
         }
 
         section {
             padding: 10px;
             background-color: rgba(0, 0, 0, 0.7);
             text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
         }
 
-        .service {
-            margin-bottom: 20px;
+        .fade-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
         }
 
-        .service img {
+        .service img, .social-icons img {
             height: 60px;
             width: 60px;
             margin-bottom: 10px;
+            transform: scale(0.8);
+            opacity: 0;
+            transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+        }
+
+        .service img.visible, .social-icons img.visible {
+            transform: scale(1);
+            opacity: 1;
         }
 
         .contact-card {
@@ -91,39 +100,12 @@
             text-align: left;
             max-width: 600px;
             margin: 0 auto;
+            opacity: 0;
+            transition: opacity 1s ease-in;
         }
 
-        .contact-card input,
-        .contact-card textarea {
-            width: calc(100% - 22px);
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-
-        .contact-card button {
-            background-color: #00ccff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .social-icons {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .social-icons a {
-            display: inline-block;
-            margin: 0 10px;
-        }
-
-        .social-icons img {
-            width: 50px;
-            height: 50px;
+        .contact-card.visible {
+            opacity: 1;
         }
 
         .vision-mission {
@@ -135,68 +117,68 @@
 
         .vision-mission h2 {
             font-size: 28px;
+            animation: fadeInUp 1s ease-in-out;
         }
 
         .vision-mission p {
             font-size: 18px;
+            animation: fadeInUp 1.5s ease-in-out;
         }
 
         footer {
             text-align: center;
             padding: 10px;
             background-color: rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
         }
 
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            nav ul {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                text-align: center;
-                background-color: rgba(0, 0, 0, 0.8);
-            }
-
-            nav ul li {
-                margin: 10px 0;
-            }
-
-            nav.active ul {
-                display: flex;
-            }
-
             .company-name {
                 font-size: 24px;
-            }
-
-            header {
-                padding: 15px 20px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <img src="images/Logo.jpg" alt="Logo">
-        <span class="company-name">ValoyItech</span>
-        <nav>
-            <div class="menu-toggle">
-                <img src="images/menu.png" alt="Menu Icon">
-            </div>
-            <ul>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#vision">Our Vision and Mission</a></li>
-                <li><a href="Project.html">Projects</a></li>
-                <li><a href="About.html">About Us</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header>
+        <img src="images/Logo.jpg" alt="Logo">
+        <span class="company-name">ValoyItech</span>
+        <nav>
+            <div class="menu-toggle">
+                <img src="images/menu.png" alt="Menu Icon">
+            </div>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#vision">Our Vision and Mission</a></li>
+                <li><a href="Project.html">Projects</a></li>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header> 
 
-    <section id="vision" class="vision-mission">
+    <section id="vision" class="vision-mission">
         <h2>Our Vision and Mission</h2>
         <p>At ValoyItech, we envision a world where small businesses are empowered with reliable IT services that allow them to thrive in the digital age. Our mission is to help businesses of all sizes, but especially small ones, stay connected, expand their reach, and harness the power of technology to drive growth and success.</p>
         <p>We believe in creating scalable IT solutions that cater to the unique needs of small businesses. Whether it's through efficient networking, robust cybersecurity, or cutting-edge web design, we are committed to providing services that enhance connectivity, increase productivity, and ensure long-term success in an increasingly competitive environment. By helping businesses embrace technology, we aim to foster a community of thriving enterprises capable of accessing wider audiences, improving operational efficiency, and staying ahead in their industries.</p>
@@ -231,37 +213,55 @@
     </section>
 
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p><strong>Phone:</strong> 0792343701</p>
-        <p><strong>Email:</strong> <a href="mailto:valoyitech@outlook.com" style="color: #00ccff;">valoyitech@outlook.com</a></p>
-        
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/hector-baloyi" target="_blank"><img src="images/LinkedIn.png" alt="LinkedIn"></a>
-            <a href="https://www.tiktok.com/@valoyitech?_t=ZM-8tT3n8TJftN&_r=1" target="_blank"><img src="images/Tiktok.png" alt="TikTok"></a>
-            <a href="https://x.com/ValoyItech?t=HQNVasWNyhBW3S54cRwVEQ&s=09" target="_blank"><img src="images/X.png" alt="X"></a>
-            <a href="https://linktr.ee/hectaworld" target="_blank"><img src="images/Linktree.png" alt="Linktree"></a>
-        </div>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p><strong>Phone:</strong> 0792343701</p>
+        <p><strong>Email:</strong> <a href="mailto:valoyitech@outlook.com" style="color: #00ccff;">valoyitech@outlook.com</a></p>
+        
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/hector-baloyi" target="_blank"><img src="images/LinkedIn.png" alt="LinkedIn"></a>
+            <a href="https://www.tiktok.com/@valoyitech?_t=ZM-8tT3n8TJftN&_r=1" target="_blank"><img src="images/Tiktok.png" alt="TikTok"></a>
+            <a href="https://x.com/ValoyItech?t=HQNVasWNyhBW3S54cRwVEQ&s=09" target="_blank"><img src="images/X.png" alt="X"></a>
+            <a href="https://linktr.ee/hectaworld" target="_blank"><img src="images/Linktree.png" alt="Linktree"></a>
+        </div> 
 
-        <div class="contact-card">
-            <h3>Get in Touch</h3>
-            <form action="mailto:valoyitech@outlook.com" method="post" enctype="text/plain">
-                <input type="text" name="Name" placeholder="Your Name" required>
-                <input type="text" name="Phone" placeholder="Your Phone Number" required>
-                <textarea name="Message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </section>
+        <div class="contact-card">
+            <h3>Get in Touch</h3>
+            <form action="mailto:valoyitech@outlook.com" method="post" enctype="text/plain">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="text" name="Phone" placeholder="Your Phone Number" required>
+                <textarea name="Message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section> 
 
-    <footer>
-        <p>&copy; 2025 ValoyItech | Designed by Hector Baloyi</p>
+    <footer>
+        <p>&copy; 2025 ValoyItech | Designed by Hector Baloyi</p>
     </footer>
 
     <script>
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('nav').classList.toggle('active');
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll("section");
+            const images = document.querySelectorAll("img");
+
+            function handleScroll() {
+                sections.forEach(section => {
+                    if (section.getBoundingClientRect().top < window.innerHeight * 0.8) {
+                        section.classList.add("fade-in");
+                    }
+                });
+
+                images.forEach(img => {
+                    if (img.getBoundingClientRect().top < window.innerHeight * 0.8) {
+                        img.classList.add("visible");
+                    }
+                });
+            }
+
+            window.addEventListener("scroll", handleScroll);
+            handleScroll();
         });
     </script>
 </body>
-                                                                                                 </html>
+            </html>
