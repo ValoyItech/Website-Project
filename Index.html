@@ -47,6 +47,7 @@
         .menu-toggle img {
             width: 40px;
             height: 40px;
+            cursor: pointer;
         }
 
         nav ul {
@@ -110,6 +111,21 @@
             cursor: pointer;
         }
 
+        .social-icons {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .social-icons img {
+            width: 50px;
+            height: 50px;
+        }
+
         .vision-mission {
             background-color: rgba(0, 0, 0, 0.8);
             padding: 30px;
@@ -125,19 +141,10 @@
             font-size: 18px;
         }
 
-        .social-icons {
+        footer {
             text-align: center;
-            margin: 20px 0;
-        }
-
-        .social-icons a {
-            display: inline-block;
-            margin: 0 10px;
-        }
-
-        .social-icons img {
-            width: 50px;
-            height: 50px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
         }
 
         @media (max-width: 768px) {
@@ -200,34 +207,38 @@
             <img src="images/m1.png" alt="Network Installation">
             <p><strong>Network Installation:</strong> We provide professional network setups...</p>
         </div>
+        <div class="service">
+            <img src="images/m2.png" alt="Surveillance Installation">
+            <p><strong>Surveillance Installation:</strong> We install high-quality security systems...</p>
+        </div>
+        <div class="service">
+            <img src="images/m3.png" alt="Hardware Troubleshooting">
+            <p><strong>Hardware & Software Troubleshooting:</strong> From fixing common device issues...</p>
+        </div>
+        <div class="service">
+            <img src="images/m4.png" alt="Web Design">
+            <p><strong>Web Design:</strong> We create visually stunning websites...</p>
+        </div>
     </section>
 
     <section id="contact">
         <h2>Contact Us</h2>
         <p><strong>Phone:</strong> 0792343701</p>
         <p><strong>Email:</strong> <a href="mailto:valoyitech@outlook.com" style="color: #00ccff;">valoyitech@outlook.com</a></p>
-
+        
         <div class="social-icons">
-            <a href="https://www.linkedin.com/in/hector-baloyi" target="_blank">
-                <img src="images/LinkedIn.png" alt="LinkedIn">
-            </a>
-            <a href="https://www.tiktok.com/@valoyitech?_t=ZM-8tT3n8TJftN&_r=1" target="_blank">
-                <img src="images/Tiktok.png" alt="TikTok">
-            </a>
-            <a href="https://x.com/ValoyItech?t=HQNVasWNyhBW3S54cRwVEQ&s=09" target="_blank">
-                <img src="images/X.png" alt="X">
-            </a>
-            <a href="https://linktr.ee/hectaworld" target="_blank">
-                <img src="images/Linktree.png" alt="Linktree">
-            </a>
+            <a href="https://www.linkedin.com/in/hector-baloyi" target="_blank"><img src="images/LinkedIn.png" alt="LinkedIn"></a>
+            <a href="https://www.tiktok.com/@valoyitech?_t=ZM-8tT3n8TJftN&_r=1" target="_blank"><img src="images/Tiktok.png" alt="TikTok"></a>
+            <a href="https://x.com/ValoyItech?t=HQNVasWNyhBW3S54cRwVEQ&s=09" target="_blank"><img src="images/X.png" alt="X"></a>
+            <a href="https://linktr.ee/hectaworld" target="_blank"><img src="images/Linktree.png" alt="Linktree"></a>
         </div>
 
         <div class="contact-card">
             <h3>Get in Touch</h3>
             <form action="mailto:valoyitech@outlook.com" method="post" enctype="text/plain">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="text" name="Phone" placeholder="Your Phone Number" required>
+                <textarea name="Message" placeholder="Your Message" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
         </div>
@@ -238,9 +249,9 @@
     </footer>
 
     <script>
-        document.querySelector(".menu-toggle").addEventListener("click", function() {
-            document.querySelector("nav").classList.toggle("active");
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
         });
     </script>
 </body>
-        </html>
+            </html>
