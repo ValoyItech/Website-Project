@@ -26,12 +26,12 @@
         }
 
         header img {
-            height: 80px; /* Increased logo size */
-            margin-right: 20px; /* Added space between logo and company name */
+            height: 80px;
+            margin-right: 20px;
         }
 
         .company-name {
-            font-size: 32px; /* Increased company name font size */
+            font-size: 32px;
             font-weight: bold;
         }
 
@@ -45,9 +45,8 @@
         }
 
         .menu-toggle img {
-            width: 40px;  /* Updated width to 40px */
-            height: 40px; /* Updated height to 40px */
-            cursor: pointer;
+            width: 40px;
+            height: 40px;
         }
 
         nav ul {
@@ -80,7 +79,7 @@
         .service img {
             height: 60px;
             width: 60px;
-            margin-bottom: 10px; /* Space between the icon and text */
+            margin-bottom: 10px;
         }
 
         .contact-card {
@@ -95,7 +94,7 @@
 
         .contact-card input,
         .contact-card textarea {
-            width: calc(100% - 22px); /* Adjusted for padding */
+            width: calc(100% - 22px);
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -124,6 +123,21 @@
 
         .vision-mission p {
             font-size: 18px;
+        }
+
+        .social-icons {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .social-icons img {
+            width: 50px;
+            height: 50px;
         }
 
         @media (max-width: 768px) {
@@ -177,27 +191,14 @@
 
     <section id="vision" class="vision-mission">
         <h2>Our Vision and Mission</h2>
-        <p>At ValoyItech, we envision a world where small businesses are empowered with reliable IT services that allow them to thrive in the digital age. Our mission is to help businesses of all sizes, but especially small ones, stay connected, expand their reach, and harness the power of technology to drive growth and success.</p>
-        <p>We believe in creating scalable IT solutions that cater to the unique needs of small businesses. Whether it's through efficient networking, robust cybersecurity, or cutting-edge web design, we are committed to providing services that enhance connectivity, increase productivity, and ensure long-term success in an increasingly competitive environment. By helping businesses embrace technology, we aim to foster a community of thriving enterprises capable of accessing wider audiences, improving operational efficiency, and staying ahead in their industries.</p>
+        <p>At ValoyItech, we envision a world where small businesses are empowered with reliable IT services that allow them to thrive in the digital age...</p>
     </section>
 
     <section id="services">
         <h2>Our Services</h2>
         <div class="service">
             <img src="images/m1.png" alt="Network Installation">
-            <p><strong>Network Installation:</strong> We provide professional network setups, including wireless access points, office space configurations, and printer installations to ensure seamless connectivity.</p>
-        </div>
-        <div class="service">
-            <img src="images/m2.png" alt="Surveillance Installation">
-            <p><strong>Surveillance Installation:</strong> We install high-quality security systems and configure them for remote access, ensuring you can monitor your property from anywhere with an internet connection.</p>
-        </div>
-        <div class="service">
-            <img src="images/m3.png" alt="Hardware Troubleshooting">
-            <p><strong>Hardware & Software Troubleshooting:</strong> From fixing common device issues to setting up and installing all necessary business software, we help businesses get started efficiently.</p>
-        </div>
-        <div class="service">
-            <img src="images/m4.png" alt="Web Design">
-            <p><strong>Web Design:</strong> We create visually stunning websites and offer free cloud hosting with zero downtime, ensuring your site remains online 24/7.</p>
+            <p><strong>Network Installation:</strong> We provide professional network setups...</p>
         </div>
     </section>
 
@@ -205,12 +206,28 @@
         <h2>Contact Us</h2>
         <p><strong>Phone:</strong> 0792343701</p>
         <p><strong>Email:</strong> <a href="mailto:valoyitech@outlook.com" style="color: #00ccff;">valoyitech@outlook.com</a></p>
+
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/hector-baloyi" target="_blank">
+                <img src="images/LinkedIn.png" alt="LinkedIn">
+            </a>
+            <a href="https://www.tiktok.com/@valoyitech?_t=ZM-8tT3n8TJftN&_r=1" target="_blank">
+                <img src="images/Tiktok.png" alt="TikTok">
+            </a>
+            <a href="https://x.com/ValoyItech?t=HQNVasWNyhBW3S54cRwVEQ&s=09" target="_blank">
+                <img src="images/X.png" alt="X">
+            </a>
+            <a href="https://linktr.ee/hectaworld" target="_blank">
+                <img src="images/Linktree.png" alt="Linktree">
+            </a>
+        </div>
+
         <div class="contact-card">
             <h3>Get in Touch</h3>
             <form action="mailto:valoyitech@outlook.com" method="post" enctype="text/plain">
-                <input type="text" name="Name" placeholder="Your Name" required>
-                <input type="text" name="Phone" placeholder="Your Phone Number" required>
-                <textarea name="Message" placeholder="Your Message" required></textarea>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
         </div>
@@ -221,9 +238,9 @@
     </footer>
 
     <script>
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('nav').classList.toggle('active');
+        document.querySelector(".menu-toggle").addEventListener("click", function() {
+            document.querySelector("nav").classList.toggle("active");
         });
     </script>
 </body>
-    </html>
+        </html>
