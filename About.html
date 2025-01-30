@@ -9,7 +9,7 @@
         body {
             margin: 0;
             padding: 0;
-            background: url('images/Background.jpg') no-repeat center center fixed;
+            background: url('images/Me.jpg') no-repeat center center fixed;
             background-size: cover;
             font-family: Arial, sans-serif;
             color: #FFFFFF;
@@ -92,7 +92,13 @@
             margin-bottom: 5px;
         }
 
-        /* Back Button */
+        /* Back Button Section */
+        .back-section {
+            margin-top: 30px; /* Creates space between text and footer */
+            margin-bottom: 50px; /* Prevents overlap with footer */
+        }
+
+        /* Back Button Animation */
         @keyframes scaleIn {
             from { transform: scale(0.5); opacity: 0; }
             to { transform: scale(1); opacity: 1; }
@@ -100,8 +106,7 @@
 
         .back-btn {
             display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
+            padding: 12px 24px;
             font-size: 16px;
             color: #fff;
             background-color: #ff6600;
@@ -120,10 +125,12 @@
 
         /* Footer */
         .footer {
-            position: absolute;
+            position: relative;
             bottom: 10px;
             font-size: 14px;
             opacity: 0.8;
+            margin-top: auto; /* Pushes footer to the bottom */
+            padding-bottom: 20px;
         }
     </style>
 </head>
@@ -146,12 +153,14 @@
         <p>Let me help you transform your IT challenges into opportunities for growth and innovation.</p>
     </div>
 
-    <!-- Back Button -->
-    <a href="Index.html" class="back-btn">Back</a>
+    <!-- Back Button Section -->
+    <div class="back-section">
+        <a href="Index.html" class="back-btn">Back</a>
+    </div>
 
     <!-- Footer -->
     <div class="footer">
         © 2025 ValoyItech | Designed by Hector Baloyi
     </div>
 </body>
-        </html>
+</html>
