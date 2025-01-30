@@ -42,9 +42,12 @@
         .menu-toggle {
             display: none;
             cursor: pointer;
-            font-size: 18px;
-            color: white;
-            font-weight: bold;
+        }
+
+        .menu-toggle img {
+            width: 40px;  /* Updated width to 40px */
+            height: 40px; /* Updated height to 40px */
+            cursor: pointer;
         }
 
         nav ul {
@@ -160,7 +163,7 @@
         <span class="company-name">ValoyItech</span>
         <nav>
             <div class="menu-toggle">
-                <img src="images/menu.png" alt="Menu Icon" width="30">
+                <img src="images/menu.png" alt="Menu Icon">
             </div>
             <ul>
                 <li><a href="#services">Services</a></li>
@@ -196,14 +199,6 @@
             <img src="images/m4.png" alt="Web Design">
             <p><strong>Web Design:</strong> We create visually stunning websites and offer free cloud hosting with zero downtime, ensuring your site remains online 24/7.</p>
         </div>
-        <div class="service">
-            <img src="images/m5.png" alt="Mobile Troubleshooting">
-            <p><strong>Mobile Devices Troubleshooting:</strong> Quick and efficient repair and maintenance for smartphones and tablets.</p>
-        </div>
-        <div class="service">
-            <img src="images/m6.png" alt="Cybersecurity Solutions">
-            <p><strong>Cybersecurity Solutions:</strong> We offer endpoint security and penetration testing to safeguard your digital assets from cyber threats.</p>
-        </div>
     </section>
 
     <section id="contact">
@@ -226,10 +221,9 @@
     </footer>
 
     <script>
-        // Mobile Menu Toggle Script
         document.querySelector('.menu-toggle').addEventListener('click', function() {
             document.querySelector('nav').classList.toggle('active');
         });
     </script>
 </body>
-</html>
+    </html>
