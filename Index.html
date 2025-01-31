@@ -37,9 +37,65 @@
             font-weight: bold;
         }
 
-        nav {
-            position: relative;
-        }
+        /* Full-Screen Overlay Menu */
+.overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.overlay ul li {
+    margin: 20px 0;
+}
+
+.overlay ul li a {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+}
+
+.overlay ul li a:hover {
+    color: #00ccff;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: block;
+    cursor: pointer;
+}
+
+.menu-toggle img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
 
         .menu-toggle {
             display: none;
@@ -186,19 +242,22 @@
         <img src="images/Logo.jpg" alt="Logo" class="animate__animated animate__rubberBand">
         <span class="company-name animate__animated animate__heartBeat" style="margin-left: 10px;">ValoyItech</span>
     </div>
-    <nav>
-        <div class="menu-toggle">
-            <img src="images/menu.png" alt="Menu Icon">
-        </div>
-        <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#vision">Our Vision and Mission</a></li>
-            <li><a href="Project.html">Projects</a></li>
-            <li><a href="About.html">About Us</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-        </ul>
-    </nav>
-</header>
+    <!-- Menu Toggle Button -->
+<div class="menu-toggle">
+    <img src="images/menu.png" alt="Menu Icon" onclick="openMenu()">
+</div>
+
+<!-- Full-Screen Overlay Menu -->
+<div class="overlay" id="overlay-menu">
+    <span class="close-btn" onclick="closeMenu()">&times;</span>
+    <ul>
+        <li><a href="#services" onclick="closeMenu()">Services</a></li>
+        <li><a href="#vision" onclick="closeMenu()">Our Vision and Mission</a></li>
+        <li><a href="Project.html" onclick="closeMenu()">Projects</a></li>
+        <li><a href="About.html" onclick="closeMenu()">About Us</a></li>
+        <li><a href="#contact" onclick="closeMenu()">Contact Us</a></li>
+    </ul>
+</div>
 
     <section id="vision" class="vision-mission animate__animated animate__fadeIn">
     <h2 class="animate__animated animate__fadeInDown">Our Vision and Mission</h2>
@@ -263,9 +322,13 @@
     </footer>
 
     <script>
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-        document.querySelector('nav').classList.toggle('active');
-    });
+   function openMenu() {
+    document.getElementById("overlay-menu").style.display = "flex";
+}
+
+function closeMenu() {
+    document.getElementById("overlay-menu").style.display = "none";
+}
 
     function revealOnScroll() {
         let elements = document.querySelectorAll('.vision-mission, .service');
