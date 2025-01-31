@@ -126,9 +126,16 @@
         }
 
         section {
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0.7);
-            text-align: center;
+    min-height: 100vh; /* Make each section fill the screen */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    width: 100%;
+}
         }
 
         .service {
