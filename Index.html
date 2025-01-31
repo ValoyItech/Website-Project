@@ -10,16 +10,14 @@
     <!-- Animate.css for Animations -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
-     body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: url('images/Background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-    width: 100%;
-    overflow-x: hidden;
-}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('images/Background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
 
         header {
             display: flex;
@@ -39,68 +37,12 @@
             font-weight: bold;
         }
 
-        /* Full-Screen Overlay Menu */
-.overlay {
-    display: none; /* Hidden by default */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    z-index: 1000;
-    text-align: center;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.overlay ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.overlay ul li {
-    margin: 20px 0;
-}
-
-.overlay ul li a {
-    font-size: 24px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    display: block;
-    padding: 10px;
-}
-
-.overlay ul li a:hover {
-    color: #00ccff;
-}
-
-.close-btn {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 40px;
-    color: white;
-    cursor: pointer;
-}
-
-/* Mobile Menu Toggle */
-.menu-toggle {
-    display: block;
-    cursor: pointer;
-}
-
-.menu-toggle img {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-}
+        nav {
+            position: relative;
+        }
 
         .menu-toggle {
-            display: block;
+            display: none;
             cursor: pointer;
         }
 
@@ -127,30 +69,17 @@
             font-weight: bold;
         }
 
-section {
-    min-height: 100vh; /* Make each section fill the screen */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
-    text-align: center;
-    width: 100%;
-}
+        section {
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
 
-     .service {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 80%;
-    max-width: 800px;
-    text-align: center;
-    margin: 20px auto;
-}
+        .service {
+            margin-bottom: 20px;
+        }
 
-.service img {
+        .service img {
             height: 60px;
             width: 60px;
             margin-bottom: 10px;
@@ -200,17 +129,11 @@ section {
         }
 
         .vision-mission {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    width: 100%;
-            }
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
 
         .vision-mission h2 {
             font-size: 28px;
@@ -230,19 +153,6 @@ section {
             .menu-toggle {
                 display: block;
             }
-            section {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.service {
-    width: 100%;
-    padding: 20px;
-}
-
-.vision-mission {
-    padding: 20px;
-}
 
             nav ul {
                 display: none;
@@ -276,22 +186,19 @@ section {
         <img src="images/Logo.jpg" alt="Logo" class="animate__animated animate__rubberBand">
         <span class="company-name animate__animated animate__heartBeat" style="margin-left: 10px;">ValoyItech</span>
     </div>
-    <!-- Menu Toggle Button -->
-<div class="menu-toggle">
-    <img src="images/menu.png" alt="Menu Icon" onclick="openMenu()">
-</div>
-
-<!-- Full-Screen Overlay Menu -->
-<div class="overlay" id="overlay-menu">
-    <span class="close-btn" onclick="closeMenu()">&times;</span>
-    <ul>
-        <li><a href="#services" onclick="closeMenu()">Services</a></li>
-        <li><a href="#vision" onclick="closeMenu()">Our Vision and Mission</a></li>
-        <li><a href="Project.html" onclick="closeMenu()">Projects</a></li>
-        <li><a href="About.html" onclick="closeMenu()">About Us</a></li>
-        <li><a href="#contact" onclick="closeMenu()">Contact Us</a></li>
-    </ul>
-</div>
+    <nav>
+        <div class="menu-toggle">
+            <img src="images/menu.png" alt="Menu Icon">
+        </div>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#vision">Our Vision and Mission</a></li>
+            <li><a href="Project.html">Projects</a></li>
+            <li><a href="About.html">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
 
     <section id="vision" class="vision-mission animate__animated animate__fadeIn">
     <h2 class="animate__animated animate__fadeInDown">Our Vision and Mission</h2>
@@ -356,13 +263,9 @@ section {
     </footer>
 
     <script>
-   function openMenu() {
-    document.getElementById("overlay-menu").style.display = "flex";
-}
-
-function closeMenu() {
-    document.getElementById("overlay-menu").style.display = "none";
-}
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+        document.querySelector('nav').classList.toggle('active');
+    });
 
     function revealOnScroll() {
         let elements = document.querySelectorAll('.vision-mission, .service');
@@ -379,4 +282,4 @@ function closeMenu() {
     window.addEventListener("scroll", revealOnScroll);
 </script>
 </body>
-                                                                                                 </html>
+    </html>
