@@ -5,6 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
     <style>
+        @keyframes bounceIn {
+            0% { transform: scale(0.7); opacity: 0; }
+            80% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-100%); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -21,6 +42,7 @@
             cursor: pointer;
             margin-top: 20px;
             width: 200px;
+            animation: bounceIn 1s ease-out;
         }
 
         h1, h2 {
@@ -28,15 +50,12 @@
             padding: 10px;
             border-radius: 8px;
             text-align: center;
+            opacity: 0;
+            animation: fadeInScale 1s ease-in-out forwards;
         }
-        h1 {
-            font-size: 36px;
-            font-weight: bold;
-        }
-        h2 {
-            font-size: 24px;
-            font-weight: bold;
-        }
+
+        h1 { font-size: 36px; font-weight: bold; }
+        h2 { font-size: 24px; font-weight: bold; }
 
         .separator {
             width: 80%;
@@ -53,6 +72,14 @@
             padding: 15px;
             border-radius: 8px;
             text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        }
+
+        .content-container.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .slider-container {
@@ -63,23 +90,32 @@
             overflow: hidden;
             text-align: center;
         }
+
         .slider {
             display: flex;
             width: 100%;
         }
+
         .slide {
             display: none;
             width: 100%;
+            opacity: 0;
+            transform: translateX(-100%);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
         }
+
+        .slide.active {
+            display: block;
+            opacity: 1;
+            transform: translateX(0);
+        }
+
         .slide img {
             width: 100%;
-            max-height: 400px; /* Ensures a landscape orientation */
+            max-height: 400px;
             object-fit: contain;
             border-radius: 8px;
             cursor: pointer;
-        }
-        .slide.active {
-            display: block;
         }
 
         .nav-button {
@@ -92,23 +128,25 @@
             padding: 10px;
             cursor: pointer;
             font-size: 18px;
-        }
-        .prev {
-            left: 10px;
-        }
-        .next {
-            right: 10px;
+            transition: transform 0.3s ease-in-out;
         }
 
-        /* Embedded YouTube Video */
+        .nav-button:hover {
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
         .video-container {
             width: 90%;
             max-width: 800px;
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%;
             height: 0;
             margin: 20px auto;
         }
+
         .video-container iframe {
             position: absolute;
             width: 100%;
@@ -122,75 +160,46 @@
             justify-content: center;
             margin-top: 20px;
         }
+
         .social-icons a img {
             height: 60px;
             width: 60px;
+            transition: transform 0.3s ease-in-out;
         }
 
-        /* Fullscreen Modal */
-        .fullscreen-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            justify-content: center;
-            align-items: center;
-        }
-        .fullscreen-modal img {
-            max-width: 90%;
-            max-height: 90%;
-        }
-        .close-modal {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 30px;
-            color: white;
-            cursor: pointer;
+        .social-icons a img:hover {
+            transform: scale(1.1);
         }
 
-        /* Responsive Design */
         @media (max-width: 600px) {
-            .slide img {
-                max-height: 250px; /* Smaller images on mobile */
-            }
+            .slide img { max-height: 250px; }
         }
     </style>
 </head>
 <body>
     <img src="images/Logo.jpg" alt="Logo" class="logo" onclick="location.href='Index.html'">
     <h1>Finished Projects</h1>
-    
-    <!-- Web Design Project -->
+
     <h2>Web Design</h2>
     <div class="slider-container">
         <button class="nav-button prev" onclick="moveSlide(-1)">&#10094;</button>
         <div class="slider">
-            <div class="slide active"><img src="images/Web1.png" alt="Web Design 1" onclick="openFullScreen(this.src)"></div>
-            <div class="slide"><img src="images/Web2.png" alt="Web Design 2" onclick="openFullScreen(this.src)"></div>
-            <div class="slide"><img src="images/Web3.png" alt="Web Design 3" onclick="openFullScreen(this.src)"></div>
-            <div class="slide"><img src="images/Web4.png" alt="Web Design 4" onclick="openFullScreen(this.src)"></div>
-            <div class="slide"><img src="images/Web5.png" alt="Web Design 5" onclick="openFullScreen(this.src)"></div>
+            <div class="slide active"><img src="images/Web1.png" alt="Web Design 1"></div>
+            <div class="slide"><img src="images/Web2.png" alt="Web Design 2"></div>
+            <div class="slide"><img src="images/Web3.png" alt="Web Design 3"></div>
         </div>
         <button class="nav-button next" onclick="moveSlide(1)">&#10095;</button>
     </div>
+
     <div class="content-container">
-        <p>At Valoyitech, we specialize in creating stunning, responsive, and user-friendly websites tailored to our clients' needs. Our team ensures high-quality designs that enhance user experience and engagement, helping businesses establish a strong online presence.</p>
+        <p>At Valoyitech, we specialize in creating stunning, responsive, and user-friendly websites tailored to our clients' needs.</p>
     </div>
 
-    <!-- Separator Line -->
     <div class="separator"></div>
 
-    <!-- SQL & Backend Project -->
     <h2>SQL & Backend</h2>
     <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/r-4VWWRHEXo?si=af0qx_IDLNvZEv7J" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div class="content-container">
-        <p>Querying a database without typing anything</p>
+        <iframe src="https://www.youtube.com/embed/r-4VWWRHEXo" frameborder="0" allowfullscreen></iframe>
     </div>
 
     <h2>Follow Us</h2>
@@ -198,14 +207,8 @@
         <a href="https://www.linkedin.com/company/valoyitech/" target="_blank">
             <img src="images/LinkedIn.png" alt="LinkedIn">
         </a>
-        <a href="https://www.tiktok.com/@hector_baloyi?_t=ZM-8tPfaSIHVzh&_r=1" target="_blank">
+        <a href="https://www.tiktok.com/@hector_baloyi" target="_blank">
             <img src="images/Tiktok.png" alt="TikTok">
-        </a>
-        <a href="https://x.com/hectaville?t=I-ZThF12ofXWgUcW4emY_w&s=09" target="_blank">
-            <img src="images/X.png" alt="X">
-        </a>
-        <a href="https://linktr.ee/valoyitech" target="_blank">
-            <img src="images/Linktree.png" alt="LinkTree">
         </a>
     </div>
 
@@ -219,16 +222,14 @@
             slides[index].classList.add('active');
         }
 
-        function openFullScreen(src) {
-            const modal = document.getElementById('fullscreen-modal');
-            const image = document.getElementById('fullscreen-image');
-            image.src = src;
-            modal.style.display = "flex";
-        }
-
-        function closeFullScreen() {
-            document.getElementById('fullscreen-modal').style.display = "none";
-        }
+        document.addEventListener("scroll", () => {
+            document.querySelectorAll(".content-container").forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.8) {
+                    el.classList.add("visible");
+                }
+            });
+        });
     </script>
 </body>
-    </html>
+        </html>
