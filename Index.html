@@ -266,9 +266,10 @@
     </footer>
 
     <script>
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-        document.querySelector('nav').classList.toggle('active');
-    });
+    document.getElementById("menuButton").addEventListener("click", function () {
+    let menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("fade-in");
+});
 
     function revealOnScroll() {
         let elements = document.querySelectorAll('.vision-mission, .service');
