@@ -8,7 +8,7 @@
     <meta name="author" content="Hector Baloyi">
     <title>ValoyItech - IT Solutions for Businesses</title>
     <!-- Animate.css for Animations -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -77,6 +77,12 @@
 
         .service {
             margin-bottom: 20px;
+            opacity: 0; /* Initially hidden */
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .service.visible {
+            opacity: 1;
         }
 
         .service img {
@@ -149,6 +155,39 @@
             background-color: rgba(0, 0, 0, 0.8);
         }
 
+        /* Full-screen overlay for mobile menu */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overlay.active {
+            display: flex;
+        }
+
+        .overlay ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        .overlay ul li {
+            margin: 20px 0;
+        }
+
+        .overlay ul li a {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
         @media (max-width: 768px) {
             .menu-toggle {
                 display: block;
@@ -156,18 +195,6 @@
 
             nav ul {
                 display: none;
-                flex-direction: column;
-                width: 100%;
-                text-align: center;
-                background-color: rgba(0, 0, 0, 0.8);
-            }
-
-            nav ul li {
-                margin: 10px 0;
-            }
-
-            nav.active ul {
-                display: flex;
             }
 
             .company-name {
@@ -182,14 +209,26 @@
 </head>
 <body>
     <header style="display: flex; align-items: center; justify-content: space-between; padding: 15px 30px; background-color: rgba(0, 0, 0, 0.7);">
-    <div style="display: flex; align-items: center;">
-        <img src="images/Logo.jpg" alt="Logo" class="animate__animated animate__rubberBand">
-        <span class="company-name animate__animated animate__heartBeat" style="margin-left: 10px;">ValoyItech</span>
-    </div>
-    <nav>
-        <div class="menu-toggle">
-            <img src="images/menu.png" alt="Menu Icon">
+        <div style="display: flex; align-items: center;">
+            <img src="images/Logo.jpg" alt="Logo" class="animate__animated animate__rubberBand">
+            <span class="company-name animate__animated animate__heartBeat" style="margin-left: 10px;">ValoyItech</span>
         </div>
+        <nav>
+            <div class="menu-toggle">
+                <img src="images/menu.png" alt="Menu Icon">
+            </div>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#vision">Our Vision and Mission</a></li>
+                <li><a href="Project.html">Projects</a></li>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Full-screen overlay for mobile menu -->
+    <div class="overlay">
         <ul>
             <li><a href="#services">Services</a></li>
             <li><a href="#vision">Our Vision and Mission</a></li>
@@ -197,43 +236,41 @@
             <li><a href="About.html">About Us</a></li>
             <li><a href="#contact">Contact Us</a></li>
         </ul>
-    </nav>
-</header>
+    </div>
 
     <section id="vision" class="vision-mission animate__animated animate__fadeIn">
-    <h2 class="animate__animated animate__fadeInDown">Our Vision and Mission</h2>
-    <p class="animate__animated animate__fadeInUp">At ValoyItech, we envision a world where small businesses are empowered with reliable IT services that allow them to thrive in the digital age. Our mission is to help businesses of all sizes, but especially small ones, stay connected, expand their reach, and harness the power of technology to drive growth and success.</p>
-    <p class="animate__animated animate__fadeInUp">We believe in creating scalable IT solutions that cater to the unique needs of small businesses. Whether it's through efficient networking, robust cybersecurity, or cutting-edge web design, we are committed to providing services that enhance connectivity, increase productivity, and ensure long-term success in an increasingly competitive environment. By helping businesses embrace technology, we aim to foster a community of thriving enterprises capable of accessing wider audiences, improving operational efficiency, and staying ahead in their industries.</p>
-    </section> 
+        <h2 class="animate__animated animate__fadeInDown">Our Vision and Mission</h2>
+        <p class="animate__animated animate__fadeInUp">At ValoyItech, we envision a world where small businesses are empowered with reliable IT services that allow them to thrive in the digital age. Our mission is to help businesses of all sizes, but especially small ones, stay connected, expand their reach, and harness the power of technology to drive growth and success.</p>
+        <p class="animate__animated animate__fadeInUp">We believe in creating scalable IT solutions that cater to the unique needs of small businesses. Whether it's through efficient networking, robust cybersecurity, or cutting-edge web design, we are committed to providing services that enhance connectivity, increase productivity, and ensure long-term success in an increasingly competitive environment. By helping businesses embrace technology, we aim to foster a community of thriving enterprises capable of accessing wider audiences, improving operational efficiency, and staying ahead in their industries.</p>
+    </section>
 
-    <section id="services">
-    <h2 class="animate__animated animate__fadeIn">Our Services</h2>
-    <div class="service">
-        <img src="images/m1.png" alt="Network Installation" class="animate__animated animate__fadeInLeft">
-        <p class="animate__animated animate__fadeInRight"><strong>Network Installation:</strong> We provide provide professional network setups, including wireless access points, office space configurations, and printer installations to ensure seamless connectivity.</p>
-        </div>
-        <div class="service">
-            <img src="images/m2.png" alt="Surveillance Installation" class="animate__animated animate__fadeInLeft">
-            <p class="animate__animated animate__fadeInRight"><strong>Surveillance Installation:</strong> We install high-quality security systems and configure them for remote access, ensuring you can monitor your property from anywhere with an internet connection.</p>
-        </div>
-        <div class="service">
-            <img src="images/m3.png" alt="Hardware Troubleshooting" class="animate__animated animate__fadeInLeft">
-            <p class="animate__animated animate__fadeInRight"><strong>Hardware & Software Troubleshooting:</strong> From fixing common device issues to setting up and installing all necessary business software, we help businesses get started efficiently.</p>
-        </div>
-        <div class="service">
-            <img src="images/m4.png" alt="Web Design" class="animate__animated animate__fadeInLeft">
-            <p class="animate__animated animate__fadeInRight"><strong>Web Design:</strong> We create visually stunning websites and offer free cloud hosting with zero downtime, ensuring your site remains online 24/7.</p>
-        </div>
-        <div class="service">
-            <img src="images/m5.png" alt="Mobile Troubleshooting" class="animate__animated animate__fadeInLeft">
-            <p class="animate__animated animate__fadeInRight"><strong>Mobile Devices Troubleshooting:</strong> Quick and efficient repair and maintenance for smartphones and tablets.</p>
-        </div>
-        <div class="service">
-            <img src="images/m6.png" alt="Cybersecurity Solutions" class="animate__animated animate__fadeInLeft">
-            <p class="animate__animated animate__fadeInRight"><strong>Cybersecurity Solutions:</strong> We offer endpoint security and penetration testing to safeguard your digital assets from cyber threats.</p>
-        </div>
-    </section>
-
+    <section id="services">
+        <h2 class="animate__animated animate__fadeIn">Our Services</h2>
+        <div class="service">
+            <img src="images/m1.png" alt="Network Installation">
+            <p><strong>Network Installation:</strong> We provide professional network setups, including wireless access points, office space configurations, and printer installations to ensure seamless connectivity.</p>
+        </div>
+        <div class="service">
+            <img src="images/m2.png" alt="Surveillance Installation">
+            <p><strong>Surveillance Installation:</strong> We install high-quality security systems and configure them for remote access, ensuring you can monitor your property from anywhere with an internet connection.</p>
+        </div>
+        <div class="service">
+            <img src="images/m3.png" alt="Hardware Troubleshooting">
+            <p><strong>Hardware & Software Troubleshooting:</strong> From fixing common device issues to setting up and installing all necessary business software, we help businesses get started efficiently.</p>
+        </div>
+        <div class="service">
+            <img src="images/m4.png" alt="Web Design">
+            <p><strong>Web Design:</strong> We create visually stunning websites and offer free cloud hosting with zero downtime, ensuring your site remains online 24/7.</p>
+        </div>
+        <div class="service">
+            <img src="images/m5.png" alt="Mobile Troubleshooting">
+            <p><strong>Mobile Devices Troubleshooting:</strong> Quick and efficient repair and maintenance for smartphones and tablets.</p>
+        </div>
+        <div class="service">
+            <img src="images/m6.png" alt="Cybersecurity Solutions">
+            <p><strong>Cybersecurity Solutions:</strong> We offer endpoint security and penetration testing to safeguard your digital assets from cyber threats.</p>
+        </div>
+    </section>
 
     <section id="contact">
         <h2>Contact Us</h2>
@@ -263,23 +300,31 @@
     </footer>
 
     <script>
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-        document.querySelector('nav').classList.toggle('active');
-    });
+        // Toggle mobile menu overlay
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.overlay').classList.toggle('active');
+        });
 
-    function revealOnScroll() {
-        let elements = document.querySelectorAll('.vision-mission, .service');
-        elements.forEach(element => {
-            let position = element.getBoundingClientRect().top;
-            let windowHeight = window.innerHeight;
-            if (position < windowHeight - 50) {
-                element.style.opacity = "1";
-                element.classList.add("animate__animated", "animate__fadeIn");
+        // Close overlay when clicking outside the menu
+        document.querySelector('.overlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('active');
             }
         });
-    }
 
-    window.addEventListener("scroll", revealOnScroll);
-</script>
+        // Animate services as they appear on scroll
+        function revealOnScroll() {
+            let services = document.querySelectorAll('.service');
+            services.forEach(service => {
+                let position = service.getBoundingClientRect().top;
+                let windowHeight = window.innerHeight;
+                if (position < windowHeight - 50) {
+                    service.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener("scroll", revealOnScroll);
+    </script>
 </body>
-    </html>
+                        </html>
