@@ -207,10 +207,10 @@
     </section> 
 
     <section id="services">
-    <h2 class="reveal-on-scroll" data-animate="animate__fadeIn">Our Services</h2>
-    <div class="service reveal-on-scroll" data-animate="animate__fadeInLeft">
-        <img src="images/m1.png" alt="Network Installation">
-        <p class="reveal-on-scroll" data-animate="animate__fadeInRight"><strong>Network Installation:</strong> We provide professional network setups, including wireless access points, office space configurations, and printer installations to ensure seamless connectivity.</p>
+    <h2 class="animate__animated animate__fadeIn">Our Services</h2>
+    <div class="service">
+        <img src="images/m1.png" alt="Network Installation" class="animate__animated animate__fadeInLeft">
+        <p class="animate__animated animate__fadeInRight"><strong>Network Installation:</strong> We provide provide professional network setups, including wireless access points, office space configurations, and printer installations to ensure seamless connectivity.</p>
         </div>
         <div class="service">
             <img src="images/m2.png" alt="Surveillance Installation" class="animate__animated animate__fadeInLeft">
@@ -262,31 +262,24 @@
         <p>&copy; 2025 ValoyItech | Designed by Hector Baloyi</p>
     </footer>
 
-   <script>
+    <script>
     document.querySelector('.menu-toggle').addEventListener('click', function() {
         document.querySelector('nav').classList.toggle('active');
     });
 
     function revealOnScroll() {
-        let elements = document.querySelectorAll('.reveal-on-scroll');
-        let windowHeight = window.innerHeight;
-
+        let elements = document.querySelectorAll('.vision-mission, .service');
         elements.forEach(element => {
             let position = element.getBoundingClientRect().top;
+            let windowHeight = window.innerHeight;
             if (position < windowHeight - 50) {
-                let animationClass = element.getAttribute('data-animate');
-                element.classList.add("animate__animated", animationClass);
                 element.style.opacity = "1";
+                element.classList.add("animate__animated", "animate__fadeIn");
             }
         });
     }
 
-    // Set initial opacity to 0 so elements are hidden before animation starts
-    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
-        el.style.opacity = "0";
-    });
-
     window.addEventListener("scroll", revealOnScroll);
-   </script>
+</script>
 </body>
     </html>
