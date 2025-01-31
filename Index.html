@@ -10,14 +10,16 @@
     <!-- Animate.css for Animations -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: url('images/Background.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
-        }
+     body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('images/Background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    width: 100%;
+    overflow-x: hidden;
+}
 
         header {
             display: flex;
@@ -125,7 +127,7 @@
             font-weight: bold;
         }
 
-.section {
+section {
     min-height: 100vh; /* Make each section fill the screen */
     display: flex;
     flex-direction: column;
@@ -137,7 +139,7 @@
     width: 100%;
 }
 
-.service {
+     .service {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -228,6 +230,19 @@
             .menu-toggle {
                 display: block;
             }
+            section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.service {
+    width: 100%;
+    padding: 20px;
+}
+
+.vision-mission {
+    padding: 20px;
+}
 
             nav ul {
                 display: none;
