@@ -287,12 +287,21 @@
 
         <div class="contact-card">
             <h3>Get in Touch</h3>
-            <form action="mailto:valoyitech@outlook.com" method="post" enctype="text/plain">
-                <input type="text" name="Name" placeholder="Your Name" required>
-                <input type="text" name="Phone" placeholder="Your Phone Number" required>
-                <textarea name="Message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+            <form action="https://formsubmit.co/valoyitech@outlook.com" method="POST">
+    <input type="hidden" name="_next" value="https://valoyitech.github.io/Website-Project/thankyou.html">
+    <input type="hidden" name="_captcha" value="false">  <!-- Optional: Disable CAPTCHA -->
+    
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <button type="submit">Send Message</button>
+</form>
         </div>
     </section>
 
