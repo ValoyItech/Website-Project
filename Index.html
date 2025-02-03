@@ -288,20 +288,25 @@
         <div class="contact-card">
             <h3>Get in Touch</h3>
            <form action="https://formspree.io/f/xzzdgkpp" method="POST">
-    <input type="hidden" name="_next" value="https://valoyitech.github.io/Website-Project/thankyou.html">
     <input type="hidden" name="_subject" value="New Contact Form Submission">
     
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
+    <!-- Full Name (Renamed for spam avoidance) -->
+    <label for="full_name">Full Name:</label>
+    <input type="text" id="full_name" name="full_name" required>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
+    <!-- Contact Email (Renamed for spam filtering) -->
+    <label for="contact_email">Email:</label>
+    <input type="email" id="contact_email" name="contact_email" required>
 
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" required></textarea>
+    <!-- Message (Renamed to avoid spam detection) -->
+    <label for="user_message">Message:</label>
+    <textarea id="user_message" name="user_message" required></textarea>
+
+    <!-- Honeypot Field (Prevents bot spam) -->
+    <input type="text" name="_gotcha" style="display:none;">
 
     <button type="submit">Send Message</button>
-           </form>
+        </form>
         </div>
     </section>
 
