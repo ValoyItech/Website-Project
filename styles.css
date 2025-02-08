@@ -622,3 +622,511 @@ header {
     background: #ddd;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adds a shadow */
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+.slide-menu {
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+.slide-menu.open {
+    transform: translateX(0);
+}
+
+.slide-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    transition: left 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+.slide-menu.active {
+    left: 0;
+}
+
+.hamburger-menu {
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.bar {
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin: 5px auto;
+    background: #fff;
+    transition: transform 0.3s ease;
+}
+
+/* Animating the hamburger menu into an "X" */
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Ensure header stays fixed and doesn't overlap */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 1050; /* Higher than slide menu */
+}
+
+/* Fix the slide menu positioning */
+.slide-menu {
+    position: fixed;
+    top: 0;
+    left: -260px; /* Keep it off-screen */
+    width: 250px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    transition: left 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+/* Show menu when active */
+.slide-menu.active {
+    left: 0;
+}
+
+/* Ensure header text doesn't get pushed */
+.header-text {
+    flex: 1;
+    text-align: center;
+    color: white;
+}
+
+/* Prevent body from shifting when menu opens */
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure header stays fixed at the top */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 1050; /* Higher than slide menu */
+}
+
+/* Header text remains centered */
+.header-text {
+    flex: 1;
+    text-align: center;
+    color: white;
+}
+
+/* Style the hamburger menu */
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Bars inside hamburger menu */
+.hamburger-menu .bar {
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    transition: transform 0.3s ease;
+}
+
+/* Position the slide menu off-screen initially */
+.slide-menu {
+    position: fixed;
+    top: 0;
+    left: -260px; /* Off-screen on the left */
+    width: 250px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+/* Make the menu visible when active */
+.slide-menu.active {
+    left: 0;
+}
+
+/* Prevent page overflow while menu is open */
+body.menu-active {
+    overflow-x: hidden;
+    margin-right: 250px; /* Prevent body from shifting */
+}
+
+header {
+    position: relative;
+    z-index: 10;
+    background-color: #fff; /* Set the header's background color if not set */
+}
+
+#pageContent {
+    margin-top: 100px; /* Adjust this according to the height of your header */
+}
+
+.slide-menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially off-screen */
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    transition: left 0.3s ease;
+    z-index: 9;
+}
+
+.slide-menu.active {
+    left: 0; /* Slide in when active */
+}
+
+#hamburgerMenu {
+    cursor: pointer;
+    z-index: 10;
+}
+
+header {
+    position: relative;
+    z-index: 10;
+    background-color: transparent; /* Or any other color of your choice */
+}
+
+header {
+    position: relative;
+    z-index: 10;
+    background-color: transparent; /* Or set a custom background color */
+    color: #grey; /* Ensure text is white or a contrasting color */
+}
+
+.header-text h1 {
+    color: #fff; /* Ensure the heading text stands out */
+}
+
+.hamburger-menu .bar {
+    background-color: white; /* Ensure the hamburger bars are white or another contrasting color */
+}
+
+header {
+    position: relative;
+    z-index: 1000; /* Higher than the rest of the content */
+}
+
+/* Header styles */
+header {
+    background-color: #333; /* Grey background for the header */
+    color: white; /* White text */
+    position: relative;
+    z-index: 1000; /* Ensure it stays above other content */
+    padding: 15px; /* Add some padding to the header */
+}
+
+.header-text h1 {
+    color: white; /* White header text */
+    font-size: 2rem; /* Adjust font size as needed */
+    margin: 0;
+}
+
+/* Hamburger menu styling */
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px; /* Increase the width for larger hamburger */
+    height: 25px; /* Adjust height as needed */
+    cursor: pointer;
+}
+
+.hamburger-menu .bar {
+    background-color: white; /* White bars */
+    height: 4px; /* Increase bar thickness */
+    width: 100%; /* Ensure bars take up the full width */
+    border-radius: 2px; /* Slight rounding for the bars */
+}
+
+/* Optional: Adjust the visibility when menu is clicked */
+#slideMenuLeft,
+#slideMenuRight {
+    display: none; /* Keep hidden by default */
+}
+
+.hamburger-menu.open + #slideMenuLeft,
+.hamburger-menu.open + #slideMenuRight {
+    display: block; /* Show menu when hamburger is clicked */
+}
+
+html, body {
+    height: 100%;
+}
+
+body.menu-active {
+    overflow: hidden;
+}
+
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: Arial, sans-serif;
+    height: 100%;
+}
+
+/* Header styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+header.hidden {
+    transform: translateY(-100%);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#hamburgerMenu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 30px;
+    height: 4px;
+    margin: 5px;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+#slideMenu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    transition: right 0.3s ease;
+    z-index: 999;
+}
+
+#slideMenu.active {
+    right: 0;
+}
+
+#slideMenu ul {
+    list-style: none;
+    padding: 20px;
+    margin-top: 100px; /* To push the menu down a bit */
+}
+
+#slideMenu li {
+    margin: 15px 0;
+}
+
+#slideMenu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Content area */
+.content {
+    margin-top: 100px; /* To prevent content from hiding behind the header */
+    padding: 20px;
+}
+
+/* Hide body scroll when the menu is active */
+body.menu-active {
+    overflow: hidden;
+}
+
+/* Mobile First Approach */
+#services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.service {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin: 0 auto;
+    max-width: 350px;
+}
+
+/* Hamburger Menu Fix */
+#slideMenu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    height: 100vh;
+    background: #333;
+    transition: left 0.3s ease;
+    z-index: 999;
+    padding-top: 60px;
+}
+
+#slideMenu.active {
+    left: 0;
+}
+
+#hamburgerMenu.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+#hamburgerMenu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+#hamburgerMenu.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    #services {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    
+    .service {
+        width: 100%;
+        max-width: none;
+    }
+    
+    .container {
+        flex-direction: column;
+    }
+    
+    header {
+        padding: 10px 15px;
+    }
+}
+
+/* Centering Improvements */
+#services h2,
+#mission h2 {
+    text-align: center;
+    width: 100%;
+}
+
+.home-logo img {
+    margin: 0 auto;
+}
+
+
+/* Ensure correct menu is styled */
+#slideMenu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    height: 100vh;
+    background: #333;
+    transition: left 0.3s ease;
+    z-index: 999;
+    padding-top: 60px;
+}
+
+#slideMenu.active {
+    left: 0;
+}
+
+/* Hamburger animation */
+#hamburgerMenu.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+#hamburgerMenu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+#hamburgerMenu.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Section offsets */
+section {
+    scroll-margin-top: 80px;
+}
+
+
+/* Increase header height */
+header {
+    height: 110px; /* Was 60px */
+    padding: 15px 25px; /* Increased padding */
+}
+
+/* Make logo bigger */
+.logo {
+    font-size: 3rem !important; /* Was 1.5rem */
+}
+
+/* Adjust hamburger size */
+.hamburger .bar {
+    width: 35px; /* Was 30px */
+    height: 5px; /* Was 4px */
+    margin: 6px 0;
+}
+
+/* Adjust menu positioning */
+#slideMenu {
+    padding-top: 80px; /* Match header height */
+}
+
+/* Fix content margin */
+#pageContent {
+    margin-top: 100px; /* Was 80px */
+}
