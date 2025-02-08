@@ -2,28 +2,34 @@ document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector("header");
     const slideMenu = document.getElementById("slideMenu");
     const hamburgerMenu = document.getElementById("hamburgerMenu");
-
+    const body = document.body;
     let lastScrollY = window.scrollY;
 
-    // Hide/Show header on scroll
-    window.addEventListener("scroll", function () {
-        if (window.scrollY > lastScrollY) {
-            header.classList.add("hidden"); // Hide header when scrolling down
-        } else {
-            header.classList.remove("hidden"); // Show header when scrolling up
-        }
+    // Scroll behavior
+    window.addEventListener("scroll", () => {
+        header.classList.toggle("hidden", window.scrollY > lastScrollY);
         lastScrollY = window.scrollY;
     });
 
     // Hamburger menu toggle
-    hamburgerMenu.addEventListener("click", function () {
+    hamburgerMenu.addEventListener("click", (e) => {
+        e.stopPropagation();
         slideMenu.classList.toggle("active");
+        body.classList.toggle("menu-active");
+        hamburgerMenu.classList.toggle("active");
     });
 
     // Close menu when clicking outside
-    document.addEventListener("click", function (event) {
-        if (!slideMenu.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+    document.addEventListener("click", (e) => {
+        if (!slideMenu.contains(e.target) && !hamburgerMenu.contains(e.target)) {
             slideMenu.classList.remove("active");
+            body.classList.remove("menu-active");
+            hamburgerMenu.classList.remove("active");
         }
     });
+
+    // Initialize animations
+    AOS.init({ duration: 1000, once: true });
 });
+
+
