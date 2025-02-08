@@ -1,0 +1,624 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and overall layout */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* Home Section */
+#home {
+    padding: 5rem 2rem;
+    text-align: center;
+    background: #2C3E50;
+    color: white;
+}
+
+#home h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+#home p {
+    font-size: 1.5rem;
+}
+
+/* Vision and Mission Section */
+.vision-mission {
+    padding: 4rem 2rem;
+    background: #ecf0f1;
+}
+
+.vision-mission h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.vision-mission p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+/* Service Section */
+#services {
+    padding: 4rem 2rem;
+    background: #fff;
+}
+
+#services h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.service {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.service img {
+    max-width: 100%;
+    height: auto;
+    margin-right: 1rem;
+}
+
+.service p {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 700px;
+}
+
+.service {
+    flex: 1 1 calc(33.333% - 1rem);
+    box-sizing: border-box;
+    margin-bottom: 2rem;
+}
+
+/* Contact Section */
+#contact-us {
+    padding: 4rem 2rem;
+    background: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.contact-left,
+.contact-right {
+    flex: 1;
+    box-sizing: border-box;
+}
+
+.contact-left h2,
+.contact-right h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-right form {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-right form .form-group {
+    margin-bottom: 1rem;
+}
+
+.contact-right form .form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.contact-right form input,
+.contact-right form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-right form button {
+    background: #4CAF50;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-right form button:hover {
+    background: #45a049;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Ensure contact icons match text size */
+#contact-us img {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+/* Centering and resizing service icons */
+.service img {
+    display: block;
+    margin: 0 auto 10px;
+    max-width: 80px;
+}
+
+/* Custom sizes for individual icons */
+.service img.network {
+    max-width: 200px;
+}
+
+.service img.surveillance {
+    max-width: 200px;
+}
+
+.service img.hardware {
+    max-width: 190px;
+}
+
+.service img.design {
+    max-width: 200px;
+}
+
+.service img.mobile {
+    max-width: 200px;
+}
+
+.service img.cybersecurity {
+    max-width: 190px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .service {
+        flex: 1 1 100%;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.hamburger-menu {
+    cursor: pointer;
+}
+
+.hamburger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: white;
+}
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+/* Header hidden when scrolling down */
+header.hidden {
+    transform: translateY(-100%);
+}
+
+/* Header text */
+.header-text h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Hamburger menu - Always visible */
+.hamburger-menu {
+    cursor: pointer;
+    display: block;
+}
+
+.hamburger-menu .bar {
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin: 6px auto;
+    background-color: white;
+}
+
+/* Slide-out menu */
+.slide-menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background: #222;
+    transition: right 0.3s ease-in-out;
+    padding-top: 60px;
+}
+
+.slide-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.slide-menu ul li {
+    padding: 15px;
+    border-bottom: 1px solid #444;
+}
+
+.slide-menu ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+/* Slide-in menu when active */
+.slide-menu.active {
+    right: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between; /* Adjusted for spacing */
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+/* Push the header text to the right */
+.header-text {
+    margin-left: auto; /* Moves the text all the way to the right */
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Header Text Styling */
+.header-text h1 {
+    font-size: 50px;  /* Adjust size as needed */
+    font-weight: bold;
+    color: white;  /* Ensure visibility */
+    white-space: nowrap; /* Prevents text wrapping */
+}
+
+
+#home {
+    text-align: center; /* Center everything */
+    padding: 50px 0;
+}
+
+.home-logo img {
+    width: 50%; /* Adjust the width to resize logo */
+    max-width: 300px; /* Ensure the logo doesn't get too big */
+    height: auto;
+    margin-bottom: 20px; /* Space between the logo and the text */
+}
+
+#home p {
+    font-size: 1.5em; /* Adjust the font size of the text */
+    font-weight: 500;
+    color: white; /* Customize text color if needed */
+}
+
+#home {
+    text-align: center;
+    padding: 100px 0 50px 0; /* Increased top padding to create space */
+    margin-top: 80px; /* Add space from the top of the viewport (so header doesn't cover the logo) */
+}
+
+.home-logo img {
+    width: 50%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#home p {
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #white;
+}
+
+#services {
+    text-align: center;
+}
+
+.service {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.service p {
+    font-size: 1.2em;
+    color: #333;
+    font-weight: 500;
+    text-align: center; /* Ensures the text is centered */
+    margin-top: 10px;
+}
+
+.social-media {
+    text-align: center;
+    padding: 20px;
+}
+
+.social-media h3 {
+    font-size: 1.8em;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.social-icon img {
+    width: 50px; /* Control the size of the icons */
+    height: 50px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icon img:hover {
+    transform: scale(1.1); /* Adds a hover effect */
+}
+
+.contact-right {
+    width: 100%; /* Adjust the width of the form */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+    .social-media {
+        width: 45%; /* Adjust for desktop */
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .contact-right {
+        width: 50%; /* Form takes 50% of the screen */
+        display: inline-block;
+    }
+}
+
+/* Services Section Styling */
+#services {
+    background-color: grey; /* Sets the background to grey */
+    color: white; /* Makes all text white */
+    padding: 60px 20px; /* Adds spacing */
+    text-align: center; /* Centers text */
+}
+
+/* Services Section Styling */
+#services {
+    background-color: grey; /* Sets the background to grey */
+    color: white; /* Ensures all text inside is white */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Ensures all service descriptions are white */
+#services .service p,
+#services .service strong {
+    color: white;
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    gap: 15px; /* Adjusts spacing between icons */
+    align-items: center;
+}
+
+.social-icon img {
+    width: 40px;  /* Default size, you can adjust this */
+    height: auto; /* Maintains aspect ratio */
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icon img:hover {
+    transform: scale(1.2); /* Slight enlargement on hover */
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    gap: 15px; /* Adjusts spacing between icons */
+    align-items: center;
+}
+
+/* Individual Icon Sizing */
+.social-icon img {
+    height: auto; /* Maintains aspect ratio */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Adjust sizes individually */
+.social-icon.linkedin img {
+    width: 40px; /* Adjust as needed */
+}
+
+.social-icon.tiktok img {
+    width: 50px; /* Adjust as needed */
+}
+
+.social-icon.x img {
+    width: 45px; /* Adjust as needed */
+}
+
+.social-icon.linktree img {
+    width: 90px; /* Adjust as needed */
+}
+
+.social-icon img:hover {
+    transform: scale(1.2); /* Slight enlargement on hover */
+}
+
+.social-icons {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: center; /* Center icons */
+}
+
+.social-icon img {
+    width: 60px !important; /* Force new size */
+    height: auto !important;
+    max-width: none !important;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+/* Left side: Contact and Social Media */
+.contact-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Align Social Media below Contact Info */
+.social-media {
+    margin-top: 20px;
+    text-align: left; /* Align text/icons to the left */
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start;
+    flex-wrap: wrap; /* Prevents overflow on small screens */
+}
+
+/* Right side: Contact Form */
+.contact-right {
+    flex: 1;
+    max-width: 50%;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .contact-right {
+        max-width: 100%;
+    }
+}
+
+/* Social Media Section - Remove Extra Space */
+.social-media {
+    margin-top: 10px; /* Reduce space between Contact Us and Follow Us */
+    padding-left: 0;  /* Align with Contact Us */
+    text-align: left;
+    width: 100%; /* Ensure it doesn't take unnecessary space */
+}
+
+/* Ensure Icons Align Properly */
+.social-icons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start; /* Keep them left-aligned */
+    flex-wrap: wrap;
+}
+
+/* Adjust Follow Us Font Size */
+.social-media h3 {
+    font-size: 1.9em; /* Adjust as needed (e.g., 1.8em, 20px, etc.) */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.separator {
+    border: none;
+    height: 4px;
+    background: #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adds a shadow */
+}
