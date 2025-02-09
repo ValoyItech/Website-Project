@@ -3,240 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
-    <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-FR5Y24X9T7"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-FR5Y24X9T7'); </script>
-    <style>
-        @keyframes bounceIn {
-            0% { transform: scale(0.7); opacity: 0; }
-            80% { transform: scale(1.05); opacity: 1; }
-            100% { transform: scale(1); }
-        }
+    <title>ValoyItech - Products</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="product.css">
+    <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FR5Y24X9T7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-        @keyframes fadeInScale {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
+  gtag('config', 'G-FR5Y24X9T7');
+</script>
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateX(-100%); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            background: url('images/Background.jpg') no-repeat center center fixed;
-            background-size: cover;
-            font-family: Arial, sans-serif;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .logo {
-            cursor: pointer;
-            margin-top: 20px;
-            width: 200px;
-            animation: bounceIn 1s ease-out;
-        }
-
-        h1, h2 {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 10px;
-            border-radius: 8px;
-            text-align: center;
-            opacity: 0;
-            animation: fadeInScale 1s ease-in-out forwards;
-        }
-
-        h1 { font-size: 36px; font-weight: bold; }
-        h2 { font-size: 24px; font-weight: bold; }
-
-        .separator {
-            width: 80%;
-            height: 2px;
-            background: white;
-            margin: 20px 0;
-        }
-
-        .content-container {
-            width: 90%;
-            max-width: 800px;
-            margin: 20px auto;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-        }
-
-        .content-container.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .slider-container {
-            position: relative;
-            width: 90%;
-            max-width: 800px;
-            margin: 20px auto;
-            overflow: hidden;
-            text-align: center;
-        }
-
-        .slider {
-            display: flex;
-            width: 100%;
-        }
-
-        .slide {
-            display: none;
-            width: 100%;
-            opacity: 0;
-            transform: translateX(-100%);
-            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-        }
-
-        .slide.active {
-            display: block;
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .slide img {
-            width: 100%;
-            max-height: 400px;
-            object-fit: contain;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        .nav-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 18px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .nav-button:hover {
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .prev { left: 10px; }
-        .next { right: 10px; }
-
-        .video-container {
-            width: 90%;
-            max-width: 800px;
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            margin: 20px auto;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 8px;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .social-icons a img {
-            height: 60px;
-            width: 60px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .social-icons a img:hover {
-            transform: scale(1.1);
-        }
-
-        @media (max-width: 600px) {
-            .slide img { max-height: 250px; }
-        }
-    </style>
 </head>
 <body>
-    <img src="images/Logo.jpg" alt="Logo" class="logo" onclick="location.href='index.html'">
-    <h1>Finished Projects</h1>
-
-    <h2>Web Design</h2>
-    <div class="slider-container">
-        <button class="nav-button prev" onclick="moveSlide(-1)">&#10094;</button>
-        <div class="slider">
-            <div class="slide active"><img src="images/Web1.png" alt="Web Design 1"></div>
-            <div class="slide"><img src="images/Web2.png" alt="Web Design 2"></div>
-            <div class="slide"><img src="images/Web3.png" alt="Web Design 3"></div>
+    <!-- Hamburger Menu -->
+    <nav class="navbar">
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
         </div>
-        <button class="nav-button next" onclick="moveSlide(1)">&#10095;</button>
-    </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#packaged-products">Products</a></li>
+            <li><a href="#our-work">Our Work</a></li>
+            <li><a href="About.html">About Us</a></li>
+            <li><a href="#contact-us">Contact</a></li>
+        </ul>
+    </nav>
 
-    <div class="content-container">
-        <p>At Valoyitech, we specialize in creating stunning, responsive, and user-friendly websites tailored to our clients' needs.</p>
-    </div>
+    <!-- Packaged Products Section -->
+    <section id="packaged-products" class="section">
+        <h2 data-aos="fade-down">ValoyItech  |  Products Selection</h2>
+        
+        <div class="products-container">
+            <div class="product-categories">
+                <!-- Category Lists -->
+                <div class="category" data-aos="fade-right">
+                    <h3 class="category-title">Business Management Solutions</h3>
+                    <ul>
+                        <li onclick="showImage('booking')">Client Booking Systems</li>
+                        <li onclick="showImage('appointment')">Appointment Management</li>
+                        <li onclick="showImage('analytics')">Business Analytics</li>
+                        <li onclick="showImage('web')">Web Design & Mail</li>
+                        <li onclick="showImage('office')">Office Space Setup</li>
+                        <li onclick="showImage('cyber')">Cyber Security</li>
+                        <li onclick="showImage('network')">Network Administration</li>
+                        <li onclick="showImage('soft')">Hardware & Software</li>
+                    </ul>
+                </div>
+                
+                <!-- Repeat similar structure for other categories -->
+                <!-- Web & Mail Solutions, Office Space Setup, etc. -->
+                
+            </div>
+            <div class="product-image" data-aos="fade-left">
+                <img id="display-image" src="images/Business.jpg" alt="Product Image">
+            </div>
+        </div>
+    </section>
 
-    <div class="separator"></div>
+    <!-- Our Work Section -->
+    <section id="our-work" class="section">
+        <h2 data-aos="zoom-in">Our Recent Work</h2>
+        <div class="slideshow-container">
+            <div class="slider">
+                <img src="images/work1.jpg" alt="Project 1">
+                <img src="images/work2.jpg" alt="Project 2">
+                <img src="images/work3.jpg" alt="Project 3">
+                <img src="mages/work4.jpg" alt="Project 4">
+            </div>
+        </div>
+        <div class="recent-work-text" data-aos="fade-up">
+            <p>Recent projects include websites for compannies in construction and companies in the enery and rentals</p>
+            <p>The Tiprope Project: Visit <a href="https://www.tiprope.co.za/" target="_blank">them here</a> to see our work.</p>
+            <p>Recent projects include websites for compannies in construction and companies in the enery and rentals</p>
+            <p>The Obyphen Project: Visit <a href="https://www.obyphen.co.za/" target="_blank">them here</a> to see our work.</p>
+        </div>
+    </section>
+    <!-- Footer -->
+    <section id="contact-us" data-aos="fade-up">
+        <div class="container">
+            <div class="contact-left" data-aos="fade-left">
+                <h2>Contact Us</h2>
+                <p><img src="images/Address.png" alt="Address Icon"> Remote or Client site</p>
+                <p><img src="images/Email.png" alt="Email Icon"> info@valoyitech.co.za</p>
+                <p><img src="images/Call.png" alt="Call Icon"> 079 234 3701</p>
+                <p><img src="images/m4.png" alt="Website Icon"> https://www.valoyitech.co.za</p>
 
-    <h2>SQL & Backend</h2>
-    <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/r-4VWWRHEXo" frameborder="0" allowfullscreen></iframe>
-    </div>
+                <hr class="separator">
 
-    <h2>Follow Us</h2>
-    <div class="social-icons">
-        <a href="https://www.linkedin.com/company/valoyitech/" target="_blank">
-            <img src="images/LinkedIn.png" alt="LinkedIn">
-        </a>
-        <a href="https://www.tiktok.com/@valoyitech?_t=ZM-8tWlyeN8754&_r=1" target="_blank">
-            <img src="images/Tiktok.png" alt="TikTok">
-        </a>
-        <a href="https://wa.me/27792343701" target="_blank">
-            <img src="images/whatsapp.png" alt="Whatsapp">
-        </a>
-        <a href="https://m.youtube.com/channel/UCP1_BpVhm97I-nNJ37eD1uQ" target="_blank">
-            <img src="images/Youtube.png" alt="Youtube">
-        </a>
-    </div>
+                <div class="social-media">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/hector-baloyi" class="social-icon" data-aos="zoom-in">
+                            <img src="images/LinkedIn.png" alt="LinkedIn Icon">
+                        </a>
+                        <a href="https://www.tiktok.com/@valoyitech" class="social-icon" data-aos="zoom-in">
+                            <img src="images/Tiktok.png" alt="TikTok Icon">
+                        </a>
+                        <a href="https://x.com/ValoyItech" class="social-icon" data-aos="zoom-in">
+                            <img src="images/X.png" alt="X Icon">
+                        </a>
+                        <a href="https://linktr.ee/hectaworld" class="social-icon" data-aos="zoom-in">
+                            <img src="images/Linktree.png" alt="Linktree Icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-    <script>
-        let index = 0;
-        const slides = document.querySelectorAll('.slide');
+            <div class="contact-right" data-aos="fade-right">
+                <h2>Send Us a Message</h2>
+                <form action="mailto:info@valoyitech.co.za" method="post" enctype="text/plain">
+                    <div class="form-group" data-aos="fade-up">
+                        <label for="full_name">Full Name:</label>
+                        <input type="text" id="full_name" name="full_name" required>
+                    </div>
+                    <div class="form-group" data-aos="fade-up">
+                        <label for="phone_number">Phone Number:</label>
+                        <input type="text" id="phone_number" name="phone_number" required>
+                    </div>
+                    <div class="form-group" data-aos="fade-up">
+                        <label for="email_address">Email Address:</label>
+                        <input type="email" id="email_address" name="email_address" required>
+                    </div>
+                    <div class="form-group" data-aos="fade-up">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" data-aos="zoom-in">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section" data-aos="fade-up">
+                <h4>Designed at ValoyItech</h4>
+                <p>Empowering businesses through innovative IT solutions</p>
+            </div>
+            <div class="footer-section" data-aos="fade-up">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#packaged-products">Services</a></li>
+                    <li><a href="#our-work">Portfolio</a></li>
+                    <li><a href="#contact-us">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-section" data-aos="fade-up">
+                <h4>Contact Info</h4>
+                <p>📞 079 234 3701</p>
+                <p>📧 info@valoyitech.co.za</p>
+            </div>
+        </div>
+    </footer>
 
-        function moveSlide(direction) {
-            slides[index].classList.remove('active');
-            index = (index + direction + slides.length) % slides.length;
-            slides[index].classList.add('active');
-        }
-
-        document.addEventListener("scroll", () => {
-            document.querySelectorAll(".content-container").forEach(el => {
-                const rect = el.getBoundingClientRect();
-                if (rect.top < window.innerHeight * 0.8) {
-                    el.classList.add("visible");
-                }
-            });
-        });
-    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="product.js"></script>
 </body>
-                </html>
+</html>
