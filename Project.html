@@ -116,25 +116,49 @@
 
             <div class="contact-right" data-aos="fade-right">
                 <h2>Send Us a Message</h2>
-                <form action="mailto:info@valoyitech.co.za" method="post" enctype="text/plain">
-                    <div class="form-group" data-aos="fade-up">
-                        <label for="full_name">Full Name:</label>
-                        <input type="text" id="full_name" name="full_name" required>
-                    </div>
-                    <div class="form-group" data-aos="fade-up">
-                        <label for="phone_number">Phone Number:</label>
-                        <input type="text" id="phone_number" name="phone_number" required>
-                    </div>
-                    <div class="form-group" data-aos="fade-up">
-                        <label for="email_address">Email Address:</label>
-                        <input type="email" id="email_address" name="email_address" required>
-                    </div>
-                    <div class="form-group" data-aos="fade-up">
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" data-aos="zoom-in">Send Message</button>
-                </form>
+<form id="contact-form">
+    <div class="form-group" data-aos="fade-up">
+        <label for="full_name">Full Name:</label>
+        <input type="text" id="full_name" name="full_name" required>
+    </div>
+    <div class="form-group" data-aos="fade-up">
+        <label for="phone_number">Phone Number:</label>
+        <input type="text" id="phone_number" name="phone_number" required>
+    </div>
+    <div class="form-group" data-aos="fade-up">
+        <label for="email_address">Email Address:</label>
+        <input type="email" id="email_address" name="email_address" required>
+    </div>
+    <div class="form-group" data-aos="fade-up">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+    </div>
+    
+    <button type="submit" data-aos="zoom-in">Send Message</button>
+</form>
+
+<!-- Include EmailJS Script -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script>
+    // Initialize EmailJS with your public key
+    (function() {
+        emailjs.init("2kWmZWDlgqbipEELd"); // Use your EmailJS Public Key here
+    })();
+
+    // Handle form submission
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+        
+        // Send form data to EmailJS
+        emailjs.sendForm("service_xn1x4hk", "template_dd67mff", this)
+            .then(function(response) {
+                alert("Message sent successfully!");
+            }, function(error) {
+                alert("Failed to send message. Please try again.");
+            });
+    });
+            </script>
             </div>
         </div>
     </section>
