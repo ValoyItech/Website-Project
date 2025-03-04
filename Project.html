@@ -83,12 +83,18 @@
     <!-- Our Work Section -->
 <section id="our-work" class="section">
     <h2 data-aos="zoom-in">Our Recent Work</h2>
-   <div class="video-container" data-aos="fade-left" data-aos-duration="1000">
-    <iframe src="https://www.youtube.com/embed/x3E2jGchp7I?si=0JoeZz4ncu3TMx7S&autoplay=1&rel=0&modestbranding=1"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
+   <div class="video-slider" data-aos="fade-left" data-aos-duration="1000">
+    <button id="prev" class="arrow">&#10094;</button>
+    <div class="video-container">
+        <iframe id="video-frame"
+                src="https://www.youtube.com/embed/x3E2jGchp7I?si=iSXUfzcIX1DaWalf&autoplay=1&rel=0&modestbranding=1"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+        </iframe>
     </div>
+    <button id="next" class="arrow">&#10095;</button>
+</div>
     </div>
     <div class="recent-work-text" data-aos="fade-up">
     <h2>Recent Projects</h2>
