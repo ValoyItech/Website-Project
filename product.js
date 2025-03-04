@@ -111,3 +111,21 @@ function showImage(imageKey) {
         console.error("Display image element not found.");
     }
 }
+
+const videos = [
+    "https://www.youtube.com/embed/x3E2jGchp7I?si=iSXUfzcIX1DaWalf&autoplay=1&rel=0&modestbranding=1",
+    "https://www.youtube.com/embed/qNNeb0ONmLQ?si=QiPajMEHos4Jg_8x&autoplay=1&rel=0&modestbranding=1"
+];
+
+let currentIndex = 0;
+const videoFrame = document.getElementById("video-frame");
+
+document.getElementById("prev").addEventListener("click", () => {
+    currentIndex = (currentIndex === 0) ? videos.length - 1 : currentIndex - 1;
+    videoFrame.src = videos[currentIndex];
+});
+
+document.getElementById("next").addEventListener("click", () => {
+    currentIndex = (currentIndex === videos.length - 1) ? 0 : currentIndex + 1;
+    videoFrame.src = videos[currentIndex];
+});
