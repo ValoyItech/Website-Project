@@ -17,164 +17,310 @@
     <link rel="icon" type="image/jpg" href="images/Logo.jpg">
 
     <title>About Hector Baloyi | ValoyItech Founder & IT Expert</title>
-    <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-FR5Y24X9T7"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-FR5Y24X9T7'); </script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FR5Y24X9T7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-FR5Y24X9T7');
+    </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
     <style>
-        /* General Styling */
         body {
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: url('images/Me.jpg') no-repeat center center fixed;
-            background-size: cover;
-            font-family: Arial, sans-serif;
-            color: #FFFFFF;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            min-height: 100vh;
-            text-align: center;
-            overflow: auto;
-            position: relative;
-        }
-
-        /* Background Bounce Animation */
-        @keyframes bounceIn {
-            0% { transform: scale(0.8); opacity: 0; }
-            50% { transform: scale(1.1); opacity: 1; }
-            100% { transform: scale(1); }
-        }
-
-        body {
-            animation: bounceIn 1.5s ease-in-out;
-        }
-
-        /* Logo Animation */
-        @keyframes spinLogo {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .logo {
-            margin-top: 20px;
-            cursor: pointer;
-            width: 150px;
-            animation: spinLogo 1.2s ease-in-out;
-        }
-
-        /* About Section */
-        .about {
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 800px;
-            margin: 20px;
-        }
-
-        /* Heading Animation (Fade In Down) */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        h1 {
-            font-size: 2em;
-            font-weight: bold;
-            margin-bottom: 15px;
-            animation: fadeInDown 1.5s ease-out;
-        }
-
-        /* Paragraph Animation (Fade In Up) */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        p, ul {
-            animation: fadeInUp 1.5s ease-out;
-            animation-delay: 0.5s;
-            animation-fill-mode: both;
-        }
-
-        ul {
-            text-align: left;
-            margin: 10px 0;
-            padding-left: 20px;
-        }
-
-        ul li {
-            margin-bottom: 5px;
-        }
-
-        /* Back Button Section */
-        .back-section {
-            margin-top: 30px; /* Creates space between text and footer */
-            margin-bottom: 50px; /* Prevents overlap with footer */
-        }
-
-        /* Back Button Animation */
-        @keyframes scaleIn {
-            from { transform: scale(0.5); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        .back-btn {
-            display: inline-block;
-            padding: 12px 24px;
-            font-size: 16px;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
             color: #fff;
-            background-color: #ff6600;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        }
+        
+        header {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            color: #f39c12;
+            text-transform: uppercase;
+        }
+        
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .profile {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .profile img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 5px solid #f39c12;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            transition: all 0.5s ease;
+        }
+        
+        .profile img:hover {
+            transform: scale(1.1) rotate(3deg);
+            box-shadow: 0 0 25px rgba(243,156,18,0.8);
+        }
+        
+        .content {
+            flex: 2;
+            padding: 20px;
+        }
+        
+        .content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+        
+        .highlight {
+            color: #f39c12;
+            font-weight: bold;
+        }
+        
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        
+        .service-box {
+            width: 30%;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 10px;
+            transition: transform 0.3s;
+        }
+        
+        .service-box:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .service-box i {
+            font-size: 2rem;
+            color: #f39c12;
+            margin-bottom: 10px;
+        }
+        
+        .contact {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .contact a {
+            color: #f39c12;
             text-decoration: none;
-            transition: background 0.3s, transform 0.3s;
-            animation: scaleIn 1.5s ease-out;
+            font-size: 1.2rem;
+            margin: 0 15px;
+            transition: color 0.3s;
         }
-
-        .back-btn:hover {
-            background-color: #e65c00;
-            transform: scale(1.1);
+        
+        .contact a:hover {
+            color: #fff;
         }
-
-        /* Footer */
-        .footer {
+        
+        .logos {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
             position: relative;
-            bottom: 10px;
-            font-size: 14px;
-            opacity: 0.8;
-            margin-top: auto; /* Pushes footer to the bottom */
-            padding-bottom: 20px;
+        }
+        
+        .logo-item {
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+        
+        .logo-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+        
+        .logo-item:hover {
+            transform: scale(1.1) rotate(-2deg);
+            filter: drop-shadow(0 0 10px rgba(243,156,18,0.7));
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #111;
+            margin-top: 40px;
+        }
+        
+        /* Home button styling */
+        .home-link {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            background: rgba(243,156,18,0.8);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .home-link:hover {
+            transform: scale(1.1);
+            background: rgba(243,156,18,1);
+        }
+        
+        /* AOS configurations */
+        [data-aos^="fade"] {
+            opacity: 0;
+            transition-property: opacity, transform;
+        }
+        
+        [data-aos^="fade"].aos-animate {
+            opacity: 1;
+            transform: translate(0);
         }
     </style>
 </head>
 <body>
-    <!-- Logo -->
-    <img src="images/Logo.jpg" alt="Logo" class="logo" onclick="location.href='index.html'">
-
-    <!-- About Section -->
-    <div class="about">
-        <h1>About Me: Hector Baloyi</h1>
-        <p>With over a decade of experience in IT, I bring a comprehensive skill set encompassing cybersecurity, networking, systems administration, hardware troubleshooting, and IT solutions tailored to meet your needs.</p>
-        <p>I specialize in configuring, administering, and troubleshooting routers, switches, and Windows Server services, including DNS, Active Directory, Print, File, Mail, Internet, DHCP, and Virtual Machines. As an ethical hacker, I utilize advanced networking tools to monitor, secure, and defend systems from potential threats. I also excel in automating tasks using Bash scripts and Python to enhance efficiency.</p>
-        <p>My expertise extends to Linux systems, including Kali Linux, as well as Veeam backup solutions for seamless data protection. Whether working with on-site infrastructure or cloud environments, I am proficient in managing platforms like AWS and Azure, leveraging their features for effective and secure network management.</p>
-        <p>In addition to core IT services, I also offer:</p>
-        <ul>
-            <li><strong>Website Design and Development:</strong> Creating responsive, user-friendly websites to help businesses establish a strong online presence.</li>
-            <li><strong>Surveillance System Installation:</strong> Providing reliable security solutions with expert installation of CCTV and monitoring systems to safeguard your property.</li>
-        </ul>
-        <p>I am passionate about staying ahead of the curve by continuously learning and applying industry standards such as GRC, ISO, NIST, and other best practices. My approach combines technical expertise with soft skills like adaptability, leadership, problem-solving, and empathy to deliver tailored IT solutions that align with your goals.</p>
-        <p>Let me help you transform your IT challenges into opportunities for growth and innovation.</p>
+    <!-- Home navigation button -->
+    <a href="index.html" class="home-link">
+        <i class="fas fa-home fa-2x"></i>
+    </a>
+    
+    <header>
+        <h1 data-aos="fade-up">About Me: Hector Baloyi</h1>
+    </header>
+    
+    <div class="container">
+        <div class="profile" data-aos="zoom-in" data-aos-duration="1500">
+            <img src="images/Me.jpg" alt="Hector Baloyi">
+        </div>
+        
+        <div class="content" data-aos="fade-left">
+            <p>With over a <span class="highlight">decade of experience</span> in IT, I specialize in <span class="highlight">cybersecurity, networking, systems administration, and IT solutions</span> tailored to meet your needs.</p>
+            <p>My expertise includes configuring and managing <span class="highlight">routers, switches, and Windows Server services</span>. As an ethical hacker, I ensure secure systems with advanced monitoring tools.</p>
+            <p>I am proficient in <span class="highlight">Linux, Veeam backup solutions, AWS, and Azure</span>, providing seamless data protection and cloud solutions.</p>
+            <p>Beyond IT, I am a <span class="highlight">full-stack developer</span> experienced in PHP, JavaScript, MySQL, and more, having developed the <span class="highlight">Gaza Chat</span> social media app.</p>
+            
+            <!-- New paragraphs -->
+            <p>My journey in technology began with earning certifications including <span class="highlight">CompTIA, Google Certified, and Cisco Networking Academy</span>. These credentials have equipped me to handle complex enterprise environments.</p>
+            <p>I'm passionate about creating <span class="highlight">scalable solutions</span> that grow with your business. Recent projects include implementing <span class="highlight">zero-trust architectures</span> for financial institutions and developing <span class="highlight">AI-driven network monitoring systems</span> for healthcare providers.</p>
+            <p>When I'm not coding or securing networks, you'll find me contributing to <span class="highlight">open-source projects</span> or mentoring aspiring IT professionals through my YouTube channel.</p>
+        </div>
     </div>
+    
+    <div class="services">
+        <div class="service-box" data-aos="flip-left">
+            <i class="fas fa-code"></i>
+            <h3>Web Development</h3>
+            <p>Building responsive and user-friendly websites using modern frameworks like React and Vue.js. I implement <span class="highlight">SEO best practices</span> and ensure <span class="highlight">WCAG compliance</span> for accessibility.</p>
+        </div>
+        
+        <div class="service-box" data-aos="flip-left">
+            <i class="fas fa-database"></i>
+            <h3>Database Solutions</h3>
+            <p>Optimized MySQL database structures & management. I follow strict security protocols including <span class="highlight">input sanitization</span>, <span class="highlight">parameterized queries</span>, and regular <span class="highlight">vulnerability assessments</span> to protect your data.</p>
+        </div>
+        
+        <div class="service-box" data-aos="flip-left">
+            <i class="fas fa-video"></i>
+            <h3>Surveillance Systems</h3>
+            <p>Expert CCTV installation & security solutions with <span class="highlight">end-to-end encryption</span> and <span class="highlight">24/7 remote monitoring</span> capabilities. Systems are designed to integrate with existing IT infrastructure.</p>
+        </div>
 
-    <!-- Back Button Section -->
-    <div class="back-section">
-        <a href="index.html" class="back-btn">Back</a>
+        <!-- New Service Boxes -->
+        <div class="service-box" data-aos="flip-left">
+            <i class="fas fa-cloud"></i>
+            <h3>Cloud Solutions</h3>
+            <p>Migrate and manage your infrastructure on <span class="highlight">AWS</span> and <span class="highlight">Azure</span> with cost-optimized architectures. I implement <span class="highlight">serverless computing</span> solutions and ensure <span class="highlight">disaster recovery</span> plans.</p>
+        </div>
+        
+        <div class="service-box" data-aos="flip-left">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Cybersecurity</h3>
+            <p>Comprehensive security solutions including <span class="highlight">penetration testing</span>, <span class="highlight">firewall configuration</span>, and <span class="highlight">employee security training</span>. I maintain SOC 2 compliance for sensitive data handling.</p>
+        </div>
+        
+        <div class="service-box" data-aos="flip-left">
+            <i class="fas fa-server"></i>
+            <h3>System Administration</h3>
+            <p>Expert management of <span class="highlight">Windows Server</span> and <span class="highlight">Linux</span> environments. I implement <span class="highlight">automated patch management</span> and <span class="highlight">active directory integration</span> for seamless operations.</p>
+        </div>
     </div>
-
-    <!-- Footer -->
-    <div class="footer">
-        © 2025 ValoyItech | Designed by Hector Baloyi
+    
+    <div class="contact" data-aos="fade-up">
+        <p>📞 <a href="tel:+27792343701">0792343701</a></p>
+        <p>✉️ <a href="mailto:info@valoyitech.co.za">info@valoyitech.co.za</a> | <a href="mailto:hector.baloyi@valoyitech.co.za">hector.baloyi@valoyitech.co.za</a></p>
+        <a href="https://www.youtube.com/@HectaVille" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.credly.com/users/hector-baloyi" target="_blank"><i class="fas fa-certificate"></i> Certifications</a>
+        <a href="GazaChat.html"><i class="fas fa-download"></i> Download Gaza Chat</a>
     </div>
+    
+    <div class="logos">
+        <div class="logo-item" data-aos="flip-up">
+            <img src="images/logo.jpg" alt="ValoyItech Logo">
+        </div>
+        
+        <div class="logo-item" data-aos="flip-down">
+            <img src="images/logo.png" alt="Gaza Chat Logo">
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Hector Baloyi | ValoyItech</p>
+    </footer>
+    
+    <!-- AOS Animation Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            disable: false,
+            startEvent: 'DOMContentLoaded',
+            initClassName: 'aos-init',
+            animatedClassName: 'aos-animate',
+            useClassNames: false,
+            disableMutationObserver: false,
+            debounceDelay: 50,
+            throttleDelay: 99,
+            once: false,
+            mirror: true,
+            anchorPlacement: 'top-bottom'
+        });
+        
+        // Add smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
