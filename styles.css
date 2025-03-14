@@ -1197,3 +1197,58 @@ header {
     z-index: -1;
     overflow: hidden;
 }
+
+/* Add these styles */
+
+.tagline {
+    text-align: center;
+    font-size: 1.5rem !important;
+    font-weight: normal;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #ffffff; /* White text */
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Semi-transparent white border */
+    padding: 15px 30px; /* Add padding around the text */
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent black background */
+    backdrop-filter: blur(5px); /* Add blur effect for better readability */
+    margin-top: 20px; /* Add some space above the text */
+}
+
+.home-logo img {
+    transition: all 0.5s ease !important;
+    cursor: pointer;
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    object-fit: contain;
+}
+
+.home-logo img:hover {
+    transform: scale(1.1) rotate(3deg) !important; /* Slight scaling and rotation */
+    filter: drop-shadow(0 0 10px rgba(243,156,18,0.7)) !important; /* Lighting effect */
+}
+
+.tagline {
+    text-align: center;
+    font-size: 1.5rem !important;
+    font-weight: normal;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #ffffff; /* White text */
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Semi-transparent white border */
+    padding: 15px 30px; /* Add padding around the text */
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent black background */
+    backdrop-filter: blur(5px); /* Add blur effect for better readability */
+    margin-top: 20px; /* Add some space above the text */
+    transition: all 0.3s ease !important; /* Smooth transition for hover effects */
+    cursor: default; /* Change cursor to default when hovering */
+}
+
+.tagline:hover {
+    color: #f39c12 !important; /* Change text color on hover */
+    border-color: #f39c12 !important; /* Change border color on hover */
+    transform: scale(1.05) rotate(2deg) !important; /* Scale up and rotate slightly */
+    text-shadow: 1px 1px 3px rgba(243, 156, 18, 0.7) !important; /* Add text shadow */
+    background: rgba(0, 0, 0, 0.5) !important; /* Darker background on hover */
+}
