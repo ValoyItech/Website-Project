@@ -19,6 +19,7 @@
     <title>ValoyItech Products | IT Solutions, Cybersecurity & Web Design.</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FR5Y24X9T7"></script>
 <script>
@@ -50,37 +51,33 @@
 
     <!-- Packaged Products Section -->
     <section id="packaged-products" class="section">
-    <h1 data-aos="fade-down">ValoyItech Products</h1> <!-- New H1 -->
-    <h2 data-aos="fade-down">Product Selection</h2>
-        
+        <h1 data-aos="fade-down" data-aos-duration="1000">ValoyItech Products</h1>
+        <h2 data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200">Product Selection</h2>
+            
         <div class="products-container">
             <div class="product-categories">
                 <!-- Category Lists -->
-                <div class="category" data-aos="fade-right">
+                <div class="category" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
                     <h3 class="category-title">Business Management Solutions</h3>
                     <ul>
-                        <li onclick="showImage('booking')">Client Booking Systems</li>
-                        <li onclick="showImage('appointment')">Database Solutions</li>
-                        <li onclick="showImage('analytics')">Business Analytics</li>
-                        <li onclick="showImage('web')">Web Design & Mail</li>
-                        <li onclick="showImage('office')">Office Space Setup</li>
-                        <li onclick="showImage('cyber')">Cyber Security</li>
-                        <li onclick="showImage('network')">Network Administration</li>
-                        <li onclick="showImage('soft')">Hardware & Software</li>
+                        <li data-aos="fade-up" data-aos-duration="800" data-aos-delay="600" onclick="showImage('booking')">Client Booking Systems</li>
+                        <li data-aos="fade-up" data-aos-duration="800" data-aos-delay="700" onclick="showImage('appointment')">Database Solutions</li>
+                        <li data-aos="fade-up" data-aos-duration="800" data-aos-delay="800" onclick="showImage('analytics')">Business Analytics</li>
+                        <li data-aos="fade-up" data-aos-duration="800" data-aos-delay="900" onclick="showImage('web')">Web Design & Mail</li>
+                        <li data-aos="fade-up" data-aos-duration="800" data-aos-delay="1000" onclick="showImage('office')">Office Space Setup</li>
+                        <li data-aos="fade-up" data-aos-duration="800" data-aos-delay="1100" onclick="showImage('cyber')">Cyber Security</li>
+                        <li data-aos="fade-up" data-aos-duration="800" data-aos-delay="1200" onclick="showImage('network')">Network Administration</li>
+                        <li data-aos="fade-up" data-aos-duration="800" data-aos-delay="1300" onclick="showImage('soft')">Hardware & Software</li>
                     </ul>
                 </div>
-                
-                <!-- Repeat similar structure for other categories -->
-                <!-- Web & Mail Solutions, Office Space Setup, etc. -->
-                
             </div>
-            <div class="product-image" data-aos="fade-left">
+            <div class="product-image" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
                 <img id="display-image" src="images/Business.jpg" alt="Product Image">
             </div>
         </div>
     </section>
 
-    <!-- Our Work Section -->
+    
     <!-- Our Work Section -->
 <section id="our-work" class="section">
     <h2 data-aos="zoom-in">Our Recent Work</h2>
@@ -98,24 +95,41 @@
 </div>
     </div>
     <div class="recent-work-text" data-aos="fade-up">
-    <h2>Recent Projects</h2>
-    <ul class="project-list">
-        <li>
-            <strong>The Tiprope Project:</strong> Visit <a href="https://www.tiprope.co.za/" target="_blank">them here</a> to see our work.
-        </li>
-        <li>
-            <strong>The Obyphen Project:</strong> Visit <a href="https://www.obyphen.co.za/" target="_blank">them here</a> to see our work.
-        </li>
-        <li>
-            <strong>Doctor Booking Site:</strong> Visit <a href="https://www.khanyisamanganyi.co.za/" target="_blank">them here</a> to see our work.
-        </li>
-        <li>
-            <strong>Ntlhontlho Security Project:</strong> Visit <a href="https://www.ntlhontlhosecurity.co.za" target="_blank">them here</a> to see our work.
-        </li>
-        <li>
-            <strong>Download our flyer:</strong> Learn more about the comprehensive IT services ValoyItech offers. From network installation and cybersecurity to web design and hardware troubleshooting, our flyer provides all the details you need to get started with us. <a href="images/ValoyItechFlyer.pdf" download>Click here to download the flyer.</a>
-        </li>
-    </ul>
+        <h2 data-aos="zoom-in">Recent Projects</h2>
+        <ul class="project-list">
+            <li data-aos="fade-right">
+                <div class="project-icon construction">
+                    <i class="fas fa-hard-hat"></i>
+                </div>
+                <strong>The Tiprope Project:</strong>  <a href="https://www.tiprope.co.za/" target="_blank">Click here</a> to visit their site.
+            </li>
+            <li data-aos="fade-right" data-aos-delay="100">
+                <div class="project-icon electricity">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <strong>The Obyphen Project:</strong>  <a href="https://www.obyphen.co.za/" target="_blank">Click here</a> to visit their site.
+            </li>
+            <li data-aos="fade-right" data-aos-delay="200">
+                <div class="project-icon medical">
+                    <i class="fas fa-medkit"></i>
+                </div>
+                <strong>Doctor Booking Site:</strong>  <a href="https://www.khanyisamanganyi.co.za/" target="_blank">Click here</a> to visit their site.
+            </li>
+            <li data-aos="fade-right" data-aos-delay="300">
+                <div class="project-icon security">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <strong>Ntlhontlho Security Project:</strong>  <a href="https://www.ntlhontlhosecurity.co.za" target="_blank">Click here</a> to visit their site.
+            </li>
+            <li data-aos="fade-right" data-aos-delay="400">
+                <strong>Download our flyer:</strong> Learn more about the comprehensive IT services ValoyItech offers. 
+            </li>
+        </ul>
+        <div class="download-button-container" data-aos="zoom-in">
+            <button class="download-button">
+                <a href="images/ValoyItechFlyer.pdf" download>Download Flyer</a>
+            </button>
+        </div>
     </div>
     </section>
     <!-- Footer -->
