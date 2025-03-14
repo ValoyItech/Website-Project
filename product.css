@@ -564,3 +564,620 @@ footer {
 .arrow:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+
+/* Modify hamburger menu to be visible on desktop */
+.hamburger-menu {
+    display: flex;
+}
+
+/* Create sidebar menu styles */
+.nav-links {
+    display: none;
+    flex-direction: column;
+    background: #007bff;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    z-index: 999;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links.nav-active {
+    display: flex;
+    transform: translateX(0);
+}
+
+/* Adjust body padding to prevent content shifting */
+body {
+    padding-left: 0;
+    transition: padding-left 0.3s ease-in-out;
+}
+
+body.no-scroll {
+    padding-left: 250px;
+    overflow-x: hidden;
+}
+
+/* Adjust main content to avoid sidebar overlap */
+#packaged-products, #our-work, #contact-us {
+    margin-left: 0;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+body.no-scroll #packaged-products, 
+body.no-scroll #our-work, 
+body.no-scroll #contact-us {
+    margin-left: 250px;
+}
+
+/* Remove mobile-specific styles */
+@media (max-width: 768px) {
+    .nav-links {
+        width: 100%;
+        height: auto;
+        top: 60px;
+    }
+    
+    .nav-links.nav-active {
+        transform: translateY(0);
+    }
+    
+    body.no-scroll {
+        padding-left: 0;
+    }
+    
+    body.no-scroll #packaged-products, 
+    body.no-scroll #our-work, 
+    body.no-scroll #contact-us {
+        margin-left: 0;
+    }
+}
+
+/* Add padding to menu items */
+.nav-links {
+    padding-left: 20px;
+}
+
+/* Adjust for mobile view */
+@media (max-width: 768px) {
+    .nav-links {
+        padding-left: 0;
+    }
+}
+
+/* Update video container styles */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    margin: 20px 0;
+    overflow: hidden; /* Ensure video doesn't overflow container */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Remove fixed width and height from video-slider */
+.video-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Adjust arrow buttons for better positioning */
+.arrow {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 100;
+}
+
+#prev {
+    left: 10px;
+}
+
+#next {
+    right: 10px;
+}
+
+/* Add Font Awesome for icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+/* Recent Work Text Styles */
+.recent-work-text {
+    margin-top: 40px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.recent-work-text h2 {
+    color: #007bff;
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-family: 'Arial', sans-serif;
+    font-weight: 700;
+}
+
+.project-list {
+    list-style-type: none;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.project-list li {
+    position: relative;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.project-list li:last-child {
+    border-bottom: none;
+}
+
+.project-list strong {
+    color: #333;
+    font-weight: 600;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.project-list a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    font-weight: 500;
+}
+
+.project-list a:hover {
+    color: #0056b3;
+}
+
+.project-list .industry {
+    color: #0066cc;
+    font-style: italic;
+}
+
+/* Project Icons */
+.project-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background-color: #f8f9fa;
+}
+
+.project-icon i {
+    font-size: 24px;
+    color: #333;
+}
+
+.construction i {
+    color: #f8d210;
+}
+
+.electricity i {
+    color: #00b894;
+}
+
+.medical i {
+    color: #e84393;
+}
+
+.security i {
+    color: #fd79a8;
+}
+
+/* Download Button */
+.download-button-container {
+    margin-top: 30px;
+}
+
+.download-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+}
+
+.download-button:hover {
+    background: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.download-button a {
+    color: white;
+    text-decoration: none;
+}
+
+.project-list a {
+    margin-right: 5px; /* Adjust as needed */
+    display: inline-block; /* Ensures margin applies properly */
+}
+
+/* Enhanced headings */
+#packaged-products h1 {
+    font-size: 36px;
+    color: #007bff;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#packaged-products h2 {
+    font-size: 28px;
+    color: #0066cc;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Enhanced category title */
+.category-title {
+    font-size: 22px;
+    color: #007bff;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #007bff;
+}
+
+/* Enhanced list items with hover effects */
+.category ul li {
+    font-size: 18px;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.category ul li:hover {
+    background: #2f6397;
+    transform: translateX(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category ul li:active {
+    transform: translateX(5px);
+}
+
+/* Enhanced product image hover effect */
+.product-image img {
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    border-radius: 12px;
+}
+
+.product-image img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Navbar enhancements */
+.navbar {
+    background: linear-gradient(90deg, #007bff 0%, #0066cc 100%);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Packaged Products Section */
+#packaged-products {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 100px 10% 60px;
+    margin-top: 60px;
+}
+
+.products-container {
+    background: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 40px;
+}
+
+/* Our Work Section */
+#our-work {
+    background: linear-gradient(180deg, #76aadf 0%, #beb3b3 100%);
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.slideshow-container {
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Recent Projects Section */
+.recent-work-text {
+    background: #cdcbe2;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    padding: 30px;
+}
+
+/* Contact Us Section */
+#contact-us {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.container {
+    background: #e6e8e9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+}
+
+.contact-left, .contact-right {
+    background: transparent;
+    padding: 20px;
+}
+
+/* Footer enhancements */
+footer {
+    background: linear-gradient(90deg, #333 0%, #222 100%);
+    color: #fff;
+    padding: 40px 10%;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-color: #f8f9fa;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    /* Navbar adjustments */
+    .navbar {
+        padding: 10px 5%;
+    }
+    
+    .nav-links {
+        padding-left: 10px;
+    }
+    
+    /* Packaged Products Section */
+    #packaged-products {
+        padding: 60px 5% 30px;
+    }
+    
+    .products-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .product-categories {
+        margin-bottom: 30px;
+    }
+    
+    .product-image {
+        margin: 20px 0;
+    }
+    
+    .product-image img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Category adjustments */
+    .category {
+        padding: 15px;
+    }
+    
+    .category-title {
+        font-size: 18px;
+    }
+    
+    .category ul li {
+        padding: 10px;
+        font-size: 16px;
+    }
+    
+    /* Our Work Section */
+    #our-work {
+        padding: 40px 5%;
+    }
+    
+    .video-slider {
+        flex-direction: column;
+    }
+    
+    .video-container {
+        width: 100%;
+        margin: 20px 0;
+    }
+    
+    .arrow {
+        position: static;
+        margin: 10px;
+    }
+    
+    /* Recent Projects Section */
+    .recent-work-text {
+        padding: 20px;
+    }
+    
+    .project-list li {
+        padding: 15px 0;
+        font-size: 16px;
+    }
+    
+    /* Contact Us Section */
+    #contact-us {
+        padding: 40px 5%;
+    }
+    
+    .container {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .contact-left, .contact-right {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .contact-right {
+        margin-bottom: 0;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    input, textarea {
+        padding: 10px;
+    }
+    
+    button {
+        padding: 10px;
+        font-size: 16px;
+    }
+    
+    /* Footer adjustments */
+    footer {
+        padding: 30px 5%;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+    }
+    
+    .footer-section {
+        margin-bottom: 20px;
+        min-width: 100%;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    /* Navbar adjustments */
+    .navbar {
+        padding: 8px 3%;
+    }
+    
+    /* Packaged Products Section */
+    #packaged-products {
+        padding: 50px 3% 20px;
+    }
+    
+    .category-title {
+        font-size: 16px;
+    }
+    
+    .category ul li {
+        padding: 8px;
+        font-size: 14px;
+    }
+    
+    /* Our Work Section */
+    #our-work {
+        padding: 30px 3%;
+    }
+    
+    /* Recent Projects Section */
+    .recent-work-text {
+        padding: 15px;
+    }
+    
+    .project-list li {
+        padding: 12px 0;
+        font-size: 14px;
+    }
+    
+    /* Contact Us Section */
+    #contact-us {
+        padding: 30px 3%;
+    }
+    
+    .contact-left p {
+        font-size: 14px;
+    }
+    
+    .form-group label {
+        font-size: 14px;
+    }
+    
+    input, textarea {
+        padding: 8px;
+        font-size: 14px;
+    }
+    
+    button {
+        padding: 8px;
+        font-size: 14px;
+    }
+    
+    /* Footer adjustments */
+    footer {
+        padding: 20px 3%;
+    }
+    
+    .footer-section h4 {
+        font-size: 18px;
+    }
+    
+    .footer-section p, .footer-section ul {
+        font-size: 14px;
+    }
+}
