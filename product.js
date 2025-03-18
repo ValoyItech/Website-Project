@@ -113,8 +113,9 @@ function showImage(imageKey) {
 }
 
 const videos = [
-    "https://www.youtube.com/embed/x3E2jGchp7I?si=iSXUfzcIX1DaWalf&autoplay=1&rel=0&modestbranding=1",
-    "https://www.youtube.com/embed/qNNeb0ONmLQ?si=QiPajMEHos4Jg_8x&autoplay=1&rel=0&modestbranding=1"
+    "https://www.youtube.com/embed/9r_10w9ncTo?si=pTvvwM2sk1EI-WKX&autoplay=1&rel=0&modestbranding=1", // New video starts first
+        "https://www.youtube.com/embed/x3E2jGchp7I?si=iSXUfzcIX1DaWalf&autoplay=1&rel=0&modestbranding=1",
+        "https://www.youtube.com/embed/qNNeb0ONmLQ?si=QiPajMEHos4Jg_8x&autoplay=1&rel=0&modestbranding=1"
 ];
 
 let currentIndex = 0;
