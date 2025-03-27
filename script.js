@@ -99,3 +99,24 @@ document.addEventListener("DOMContentLoaded", function () {
     animate();
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    function typeEffect(element, text, speed = 50) {
+        let i = 0;
+        function type() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, speed);
+            }
+        }
+        type();
+    }
+
+    let visionMission = document.getElementById("vision-text");
+    if (visionMission) {
+        let text = "At ValoyItech, we envision a world where small businesses are empowered with reliable IT services that allow them to thrive in the digital age. Our mission is to help businesses of all sizes, but especially small ones, stay connected, expand their reach, and harness the power of technology to drive growth and success. We believe in creating scalable IT solutions that cater to the unique needs of small businesses. Whether it's through efficient networking, robust cybersecurity, or cutting-edge web design, we are committed to providing services that enhance connectivity, increase productivity, and ensure long-term success in an increasingly competitive environment. By helping businesses embrace technology, we aim to foster a community of thriving enterprises capable of accessing wider audiences, improving operational efficiency, and staying ahead in their industries.";
+        visionMission.innerHTML = ""; // Clear initial content
+        typeEffect(visionMission, text);
+    }
+});
+
