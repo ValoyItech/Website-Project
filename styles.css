@@ -1252,3 +1252,14 @@ header {
     text-shadow: 1px 1px 3px rgba(243, 156, 18, 0.7) !important; /* Add text shadow */
     background: rgba(0, 0, 0, 0.5) !important; /* Darker background on hover */
 }
+
+/* Typing effect container */
+.typing::after {
+    content: "|"; /* Cursor */
+    display: inline-block;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
