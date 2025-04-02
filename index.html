@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
+<head>
+  <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="ValoyItech offers comprehensive IT services including network installation, cybersecurity, web design, and hardware troubleshooting for small businesses.">
         <meta name="author" content="Hector, ValoyItech">
@@ -33,207 +33,289 @@
         
         <!-- Title -->
         <title>ValoyItech | Professional IT Services</title>
-        
-        <!-- Styles and Scripts -->
-        <link rel="stylesheet" href="styles.css">
-        <script src="script.js" defer></script>
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="styles.css">
 
-        <!-- (Other external scripts and CSS files) -->
-        
-        <!-- Structured Data for Organization -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "ValoyItech",
-          "url": "https://www.valoyitech.co.za",
-          "logo": "https://www.valoyitech.co.za/images/Logo.jpg",
-          "sameAs": [
-            "https://www.linkedin.com/in/hector-baloyi",
-            "https://www.tiktok.com/@valoyitech",
-            "https://x.com/ValoyItech",
-            "https://linktr.ee/hectaworld"
-          ]
-        }
-        </script>
-    
-
-    <!-- Google Analytics Tracking Script -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FR5Y24X9T7"></script> 
-    <script> 
-        window.dataLayer = window.dataLayer || []; 
-        function gtag(){dataLayer.push(arguments);} 
-        gtag('js', new Date()); 
-        gtag('config', 'G-FR5Y24X9T7'); 
-    </script>
-
-    <!-- AOS Animation Library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
-
+  <!-- Google Analytics Tracking Script -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FR5Y24X9T7"></script> 
+  <script> 
+      window.dataLayer = window.dataLayer || []; 
+      function gtag(){dataLayer.push(arguments);} 
+      gtag('js', new Date()); 
+      gtag('config', 'G-FR5Y24X9T7'); 
+  </script>
 </head>
 <body>
-<header>
-        <div class="logo">ValoyItech</div>
+
+    <a href="https://wa.me/27792343701" class="whatsapp-float" target="_blank">
+      <i class="fab fa-whatsapp"></i> Chat Now
+    </a>
+  
+    <header id="header">
+        <div class="logo">
+          <img src="images/logo.png" alt="ValoyItech Logo">
+        </div>
+        <h1 class="site-title">ValoyItech</h1>
         <div id="hamburgerMenu" class="hamburger">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
+          <i class="fas fa-bars"></i>
         </div>
-        <!-- Remove these duplicate menus -->
-<!-- DELETE THESE DIVS -->
-<!-- <div id="slideMenuLeft" class="slide-menu" data-aos="fade-right">...</div> -->
-<!-- <div id="slideMenuRight" class="slide-menu" data-aos="fade-left">...</div> -->
-
-<!-- Keep only the main hamburger menu -->
-<nav id="slideMenu">
-    <ul>
-        <li><a href="#home" class="menu-link">Home</a></li>
-        <li><a href="#mission" class="menu-link">Our Mission & Vision</a></li>
-        <li><a href="#services" class="menu-link">Our Services</a></li>
-        <li><a href="products.html" class="menu-link">Products</a></li>
-        <li><a href="About.html" class="menu-link">About Me</a></li>
-        <li><a href="#contact-us" class="menu-link">Contact Us</a></li>
-        <li><a href="Project.html" class="menu-link">Projects</a></li>
-        <li><a href="GazaChat.html" class="menu-link">GazaChat App</a></li>
-    </ul>
-</nav>
-    </header>
-
-<div id="pageContent">
-    <section id="home" data-aos="fade-up">
-        <canvas id="canvasBackground"></canvas>
-        <div class="home-logo">
-            <img src="images/Logo.jpg" alt="ValoyItech Logo" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+        <!-- Sidebar navigation remains unchanged -->
+        <nav id="sidebar">
+          <div class="sidebar-logo">
+              <img src="images/logo.jpg" alt="Logo">
+          </div>
+          <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="products.html" class="menu-link">Products</a></li>
+              <li><a href="About.html" class="menu-link">About Me</a></li>
+              <li><a href="Project.html" class="menu-link">Projects</a></li>
+              <li><a href="GazaChat.html" class="menu-link">GazaChat App</a></li>
+          </ul>
+      </nav>      
+      </header>
+      
+  
+  <!-- Hero Slider Section -->
+  <section id="hero">
+    <div class="slider">
+      <!-- Slide 1 -->
+      <div class="slide" data-aos="fade-up">
+        <img src="images/2.png" alt="Networking">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h2>Networking</h2>
+          <p>Robust network solutions for seamless connectivity.</p>
+          <div class="hero-buttons">
+            <a href="https://wa.me/27792343701" class="chat-now">Chat Now</a>
+            <a href="https://www.valoyitech.co.za/Project.html" class="view-projects">View Our Projects</a>
+        </div>        
         </div>
-        <h1 class="tagline" data-aos="fade-left">Expert IT solutions tailored to your business needs</h1>
-    </section>
-    
-    
-    
-
-    <section id="mission" class="vision-mission" data-aos="fade-right">
-        <h2 data-aos="fade-up">Our Vision and Mission</h2>
-        <p id="vision-text" class="typing">
-            At ValoyItech, we envision a world where small businesses are empowered...
-        </p>
-    </section>
-
-    <section id="services">
-        <h2 data-aos="zoom-in">Our Services</h2>
-
-        <div class="service" data-aos="fade-left">
-            <img src="images/m1.png" alt="Network Installation">
-            <p><strong>Network Installation:</strong>  We provide professional network setups tailored to your business needs, ensuring seamless connectivity across your entire infrastructure. Our services include the installation and configuration of wireless access points for optimal coverage, office space network setups for efficient workflow, and printer installations for smooth document management. Additionally, we specialize in server rack setup, configuring servers, and integrating them into your network to ensure high performance, reliability, and security. We ensure your server configurations are aligned with your organization's specific requirements, optimizing both hardware and software for maximum efficiency and scalability.</p>
+      </div>
+      <!-- Slide 2 -->
+      <div class="slide" data-aos="fade-up">
+        <img src="images/3.png" alt="Cybersecurity">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h2>Cybersecurity</h2>
+          <p>Protecting your digital assets with advanced security solutions.</p>
+          <div class="hero-buttons">
+            <a href="https://wa.me/27792343701">Chat Now</a>
+            <a href="https://www.valoyitech.co.za/Project.html">View Our Projects</a>
+        </div>        
         </div>
-        <div class="service" data-aos="fade-right">
-            <img src="images/m2.png" alt="Database Solutions">
-            <p><strong>Database Solutions:</strong> We specialize in designing, implementing, and managing efficient databases tailored for small businesses. Our services include creating custom frontends for seamless data management, ensuring secure storage for files and media, and optimizing performance for reliability and scalability. Whether you need a structured database for inventory, customer records, or financial data, we provide user-friendly solutions that enhance productivity and data security.            </p>
+      </div>
+      <!-- Slide 3 -->
+      <div class="slide" data-aos="fade-up">
+        <img src="images/4.png" alt="Graphic Design">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h2>Graphic Design</h2>
+          <p>Creative designs that elevate your brand.</p>
+          <div class="hero-buttons">
+            <a href="https://wa.me/27792343701">Chat Now</a>
+            <a href="https://www.valoyitech.co.za/Project.html">View Our Projects</a>
+        </div>        
         </div>
-        <div class="service" data-aos="fade-left">
-            <img src="images/m3.png" alt="Hardware Troubleshooting">
-            <p><strong>Hardware & Software Troubleshooting:</strong> We provide comprehensive troubleshooting services, from resolving common device issues to setting up and installing essential business software, ensuring your operations run smoothly from day one. Our expertise extends to building custom gaming PCs tailored to meet the specific needs of gaming enthusiasts, offering high-performance hardware upgrades, and system cloning for seamless migration or backup. Whether you're upgrading your current setup or need a brand-new system, we ensure all components work efficiently and are perfectly configured for your personal or business needs. We’re committed to getting your technology up and running quickly so you can focus on what matters most.</p>
+      </div>
+      <!-- Slide 4 -->
+      <div class="slide" data-aos="fade-up">
+        <img src="images/5.png" alt="Full Stack Development">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h2>Full Stack Development</h2>
+          <p>End-to-end solutions for modern web applications.</p>
+          <div class="hero-buttons">
+            <a href="https://wa.me/27792343701">Chat Now</a>
+            <a href="https://www.valoyitech.co.za/Project.html">View Our Projects</a>
+        </div>        
         </div>
-        <div class="service" data-aos="fade-right">
-            <img src="images/m4.png" alt="Web Design">
-            <p><strong>Web Design:</strong> We create visually stunning, user-friendly websites that not only capture attention but also enhance your brand's online presence. Our designs are fully optimized for search engines (SEO), helping you rank higher and reach a broader audience. Additionally, we offer free cloud hosting with zero downtime, ensuring your site remains online 24/7 with fast loading speeds. We also assist in integrating data analytics tools, providing you with valuable insights into your target market, tracking the performance of marketing campaigns, and offering a competitive edge by helping you make data-driven decisions to boost sales and improve customer engagement.</p>
+      </div>
+      <!-- Slide 5 -->
+      <div class="slide" data-aos="fade-up">
+        <img src="images/6.png" alt="Connectivity">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h2>Connectivity</h2>
+          <p>Innovative solutions to keep you connected at all times.</p>
+          <div class="hero-buttons">
+            <a href="https://wa.me/27792343701">Chat Now</a>
+            <a href="https://www.valoyitech.co.za/Project.html">View Our Projects</a>
+        </div>        
         </div>
-        <div class="service" data-aos="fade-right">
-            <img src="images/m6.png" alt="Cybersecurity Solutions">
-            <p><strong>Cybersecurity Solutions:</strong> We provide comprehensive protection for your digital assets through advanced endpoint security and thorough penetration testing. Our endpoint security solutions ensure that all devices connected to your network—such as computers, mobile devices, and IoT devices—are safeguarded from malware, ransomware, and other evolving cyber threats. Additionally, our penetration testing services simulate real-world attacks to identify vulnerabilities in your network, systems, and applications before malicious actors can exploit them. By proactively securing your infrastructure, we help mitigate risks, prevent data breaches, and ensure your business remains resilient in the face of emerging cyber threats.</p>
+      </div>
+      <!-- Slide 6 (Repeating themes for additional images) -->
+      <div class="slide" data-aos="fade-up">
+        <img src="images/7.png" alt="Project Management">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h2>Project Management</h2>
+          <p>Robust network solutions for seamless connectivity.</p>
+          <div class="hero-buttons">
+            <a href="https://wa.me/27792343701">Chat Now</a>
+            <a href="https://www.valoyitech.co.za/Project.html">View Our Projects</a>
+        </div>        
         </div>
-    </section>
-
-    <section id="contact-us" data-aos="fade-up">
-        <div class="container">
-            <div class="contact-left" data-aos="fade-left">
-                <h2>Contact Us</h2>
-                <p><img src="images/Address.png" alt="Address Icon"> Remote or Client site</p>
-                <p><img src="images/Email.png" alt="Email Icon"> info@valoyitech.co.za</p>
-                <p><img src="images/Call.png" alt="Call Icon"> 079 234 3701</p>
-                <p><img src="images/m4.png" alt="Website Icon"> https://www.valoyitech.co.za</p>
-
-                <hr class="separator">
-
-                <div class="social-media">
-                    <h3>Follow Us</h3>
-                    <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/hector-baloyi" class="social-icon" data-aos="zoom-in">
-                            <img src="images/LinkedIn.png" alt="LinkedIn Icon">
-                        </a>
-                        <a href="https://www.tiktok.com/@valoyitech" class="social-icon" data-aos="zoom-in">
-                            <img src="images/Tiktok.png" alt="TikTok Icon">
-                        </a>
-                        <a href="https://wa.me/27792343701" class="social-icon" data-aos="zoom-in">
-                            <img src="images/whatsapp.png" alt="X Icon">
-                        </a>
-                        <a href="https://linktr.ee/hectaworld" class="social-icon" data-aos="zoom-in">
-                            <img src="images/Linktree.png" alt="Linktree Icon">
-                        </a>
-                    </div>
-                </div>
+      </div>
+      <!-- Slide 7 -->
+      <div class="slide" data-aos="fade-up">
+        <img src="images/1.png" alt="Cybersecurity">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h2>Web Design</h2>
+          <p>Protecting your digital assets with advanced security solutions.</p>
+          <div class="hero-buttons">
+            <a href="https://wa.me/27792343701">Chat Now</a>
+            <a href="https://www.valoyitech.co.za/Project.html">View Our Projects</a>
+        </div>        
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Mission & Vision Section -->
+  <section id="mission" data-aos="fade-up">
+    <canvas id="missionCanvas"></canvas>
+    <div class="container mission-container">
+      <h2>Our Mission & Vision</h2>
+      <p id="missionText" class="typing-effect">
+        At ValoyItech, we envision a world where small businesses are empowered with reliable IT services that allow them to thrive in the digital age. Our mission is to help businesses of all sizes, but especially small ones, stay connected, expand their reach, and harness the power of technology to drive growth and success. We believe in creating scalable IT solutions that cater to the unique needs of small businesses. Whether it's through efficient networking, robust cybersecurity, or cutting-edge web design, we are committed to providing services that enhance connectivity, increase productivity, and ensure long-term success in an increasingly competitive environment. By helping businesses embrace technology, we aim to foster a community of thriving enterprises capable of accessing wider audiences, improving operational efficiency, and staying ahead in their industries.
+      </p>
+    </div>
+  </section>
+  
+  
+  <!-- Services Section -->
+  <section id="services" data-aos="fade-up">
+    <div class="container">
+        <h2>Our Services</h2>
+        <div class="service-items">
+            <div class="service-item" data-aos="fade-right">
+                <i class="fas fa-network-wired"></i>
+                <h3>Network Installation</h3>
+                <p>Seamless connectivity with expert Wi-Fi, office setups, and server configurations.</p>
             </div>
-
-            <div class="contact-right" data-aos="fade-right">
-              <h2>Send Us a Message</h2>
-<form id="contact-form">
-    <div class="form-group" data-aos="fade-up">
-        <label for="full_name">Full Name:</label>
-        <input type="text" id="full_name" name="full_name" required>
+            <div class="service-item" data-aos="fade-left">
+                <i class="fas fa-database"></i>
+                <h3>Database Solutions</h3>
+                <p>Secure and scalable database management with custom frontends.</p>
+            </div>
+            <div class="service-item" data-aos="fade-right">
+                <i class="fas fa-tools"></i>
+                <h3>Hardware & Software</h3>
+                <p>Device troubleshooting, software setup, and custom PC builds.</p>
+            </div>
+            <div class="service-item" data-aos="fade-left">
+                <i class="fas fa-globe"></i>
+                <h3>Web Design</h3>
+                <p>SEO-optimized, visually stunning websites with free cloud hosting.</p>
+            </div>
+            <div class="service-item" data-aos="fade-right">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Cybersecurity</h3>
+                <p>Advanced security and penetration testing to protect your assets.</p>
+            </div>
+            <div class="service-item" data-aos="fade-left">
+                <i class="fas fa-code"></i>
+                <h3>Full Stack Development</h3>
+                <p>End-to-end web and software solutions tailored for your needs.</p>
+            </div>
+            <div class="service-item" data-aos="fade-right">
+                <i class="fas fa-palette"></i>
+                <h3>Graphic Design</h3>
+                <p>Creative and impactful visuals to elevate your brand.</p>
+            </div>
+            <div class="service-item" data-aos="fade-left">
+                <i class="fas fa-signal"></i>
+                <h3>Connectivity</h3>
+                <p>Reliable internet and communication solutions for your business.</p>
+            </div>
+        </div>
     </div>
-    <div class="form-group" data-aos="fade-up">
-        <label for="phone_number">Phone Number:</label>
-        <input type="text" id="phone_number" name="phone_number" required>
-    </div>
-    <div class="form-group" data-aos="fade-up">
-        <label for="email_address">Email Address:</label>
-        <input type="email" id="email_address" name="email_address" required>
-    </div>
-    <div class="form-group" data-aos="fade-up">
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
-    </div>
-    
-    <button type="submit" data-aos="zoom-in">Send Message</button>
-</form>
+</section>
 
-<!-- Include EmailJS Script -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-<script>
-    // Initialize EmailJS with your public key
-    (function() {
-        emailjs.init("2kWmZWDlgqbipEELd"); // Use your EmailJS Public Key here
-    })();
-
-    // Handle form submission
-    document.getElementById("contact-form").addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent default form submission
-        
-        // Send form data to EmailJS
-        emailjs.sendForm("service_xn1x4hk", "template_dd67mff", this)
-            .then(function(response) {
-                alert("Message sent successfully!");
-            }, function(error) {
-                alert("Failed to send message. Please try again.");
+  
+  <!-- Contact Section -->
+  <section id="contact" data-aos="fade-up">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <div class="contact-content">
+        <div class="contact-info" data-aos="fade-right">
+          <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, City, Country</p>
+          <p><i class="fas fa-envelope"></i> info@valoyitech.co.za</p>
+          <p><i class="fas fa-phone"></i> +27 79 234 3701</p>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/hector-baloyi" data-aos="zoom-in"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.tiktok.com/@valoyitech" data-aos="zoom-in"><i class="fab fa-tiktok"></i></a>
+            <a href="https://wa.me/27792343701" data-aos="zoom-in"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://linktr.ee/hectaworld" data-aos="zoom-in"><i class="fas fa-link"></i></a>
+          </div>
+        </div>
+        <div class="contact-form" data-aos="fade-left">
+          <form id="contact-form">
+            <div class="form-group" data-aos="fade-up">
+                <label for="full_name">Full Name:</label>
+                <input type="text" id="full_name" name="full_name" required>
+            </div>
+            <div class="form-group" data-aos="fade-up">
+                <label for="phone_number">Phone Number:</label>
+                <input type="text" id="phone_number" name="phone_number" required>
+            </div>
+            <div class="form-group" data-aos="fade-up">
+                <label for="email_address">Email Address:</label>
+                <input type="email" id="email_address" name="email_address" required>
+            </div>
+            <div class="form-group" data-aos="fade-up">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            
+            <button type="submit" data-aos="zoom-in">Send Message</button>
+          </form>
+  
+          <!-- Include EmailJS Script -->
+          <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+          <script>
+            // Initialize EmailJS with your public key
+            (function() {
+                emailjs.init("2kWmZWDlgqbipEELd"); // Use your EmailJS Public Key here
+            })();
+  
+            // Handle form submission
+            document.getElementById("contact-form").addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent default form submission
+                
+                // Send form data to EmailJS
+                emailjs.sendForm("service_xn1x4hk", "template_dd67mff", this)
+                    .then(function(response) {
+                        alert("Message sent successfully!");
+                    }, function(error) {
+                        alert("Failed to send message. Please try again.");
+                    });
             });
-    });
-</script>
-            </div>
+          </script>
         </div>
-    </section>
-</div>
-
-<footer data-aos="fade-up">
-    <p>© 2025 ValoyItech | Designed by Hector Baloyi</p>
-</footer>
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        AOS.init({ duration: 1000, once: true });
-    });
-</script>
-
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- Footer -->
+  <footer data-aos="fade-up">
+    <div class="container">
+      <p>© 2025 ValoyItech | Designed by Hector Baloyi</p>
+    </div>
+  </footer>
+  
+  <!-- AOS Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
 </body>
 </html>
