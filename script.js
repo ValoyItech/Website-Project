@@ -1,122 +1,202 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const header = document.querySelector("header");
-    const slideMenu = document.getElementById("slideMenu");
-    const hamburgerMenu = document.getElementById("hamburgerMenu");
-    const body = document.body;
-    let lastScrollY = window.scrollY;
+// Initialize AOS
+AOS.init({
+    duration: 1000,
+    once: true
+  });
+  
+  // Header Auto Hide on Scroll
+  let prevScrollPos = window.pageYOffset;
+  const header = document.getElementById("header");
+  window.addEventListener("scroll", () => {
+    let currentScrollPos = window.pageYOffset;
+    if (prevScrollPos > currentScrollPos) {
+      header.style.top = "0";
+    } else {
+      header.style.top = "-80px";
+    }
+    prevScrollPos = currentScrollPos;
+  });
+  
+  // Sidebar Navigation Toggle
+  const hamburger = document.getElementById("hamburgerMenu");
+const sidebar = document.getElementById("sidebar");
 
-    // Scroll behavior
-    window.addEventListener("scroll", () => {
-        header.classList.toggle("hidden", window.scrollY > lastScrollY);
-        lastScrollY = window.scrollY;
-    });
-
-    // Hamburger menu toggle
-    hamburgerMenu.addEventListener("click", (e) => {
-        e.stopPropagation();
-        slideMenu.classList.toggle("active");
-        body.classList.toggle("menu-active");
-        hamburgerMenu.classList.toggle("active");
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener("click", (e) => {
-        if (!slideMenu.contains(e.target) && !hamburgerMenu.contains(e.target)) {
-            slideMenu.classList.remove("active");
-            body.classList.remove("menu-active");
-            hamburgerMenu.classList.remove("active");
-        }
-    });
-
-    // Initialize animations
-    AOS.init({ duration: 1000, once: true });
+hamburger.addEventListener("click", (event) => {
+    event.stopPropagation(); // Prevent click from closing immediately
+    sidebar.style.left = sidebar.style.left === "0px" ? "-250px" : "0px";
 });
 
+// Close sidebar when clicking outside of it
+document.addEventListener("click", (event) => {
+    if (!sidebar.contains(event.target) && !hamburger.contains(event.target)) {
+        sidebar.style.left = "-250px";
+    }
+});
+  
+  // Simple Hero Slider
+  const slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
+  const slideInterval = 5000; // 5 seconds
+  
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      if (i === index) {
+        slide.classList.add('active');
+      }
+    });
+  }
+  
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+  
+  // Start slider
+  showSlide(currentSlide);
+  setInterval(nextSlide, slideInterval);
+  
+  // Close sidebar when a menu link is clicked
+  const menuLinks = document.querySelectorAll('.menu-link');
+  menuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      sidebar.style.left = "-250px";
+    });
+  });
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Canvas setup
-    const canvas = document.getElementById('canvasBackground');
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    const canvas = document.getElementById('missionCanvas');
     const ctx = canvas.getContext('2d');
-    
-    // Generate particles
-    let particles = generateParticles(300);
-    
-    function generateParticles(num) {
-        const particles = [];
-        for (let i = 0; i < num; i++) {
-            particles.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                size: Math.random() * 3, // Vary particle size
-                speedX: (Math.random() - 0.5) * 0.2, // Random speed
-                speedY: (Math.random() - 0.5) * 0.2,
-                opacity: Math.random() // Vary brightness
-            });
-        }
-        return particles;
-    }
 
-    // Resize canvas on window resize
     function resizeCanvas() {
-        const homeSection = document.getElementById('home');
-        canvas.width = homeSection.offsetWidth;
-        canvas.height = homeSection.offsetHeight;
-        particles = generateParticles(300); // Refresh particles
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
     }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas(); // Initialize canvas size
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
 
-    // Animation loop
-    function animate() {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height); // Semi-transparent background for motion blur
+    let particlesArray = [];
+    const numberOfParticles = 300;
 
-        ctx.fillStyle = '#ffffff'; // Particle color
-        particles.forEach(particle => {
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 8 + 5; // Guaranteed large size (min 5, max 13)
+            this.speedX = Math.random() * 1 - 0.5;
+            this.speedY = Math.random() * 1 - 0.5;
+        }
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+
+            if (this.x < 0 || this.x > canvas.width) this.speedX = -this.speedX;
+            if (this.y < 0 || this.y > canvas.height) this.speedY = -this.speedY;
+        }
+        draw() {
+            ctx.fillStyle = "rgba(255, 0, 0, 0.9)";
+            ctx.shadowColor = "rgba(255, 0, 0, 1)";
+            ctx.shadowBlur = 10;
             ctx.beginPath();
-            ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             ctx.fill();
+        }
+    }
 
-            // Update particle position
-            particle.x += particle.speedX;
-            particle.y += particle.speedY;
+    function init() {
+        particlesArray = [];
+        for (let i = 0; i < numberOfParticles; i++) {
+            particlesArray.push(new Particle());
+        }
+    }
 
-            // Bounce on edges
-            if (particle.x < 0 || particle.x > canvas.width) {
-                particle.speedX *= -1;
-            }
-            if (particle.y < 0 || particle.y > canvas.height) {
-                particle.speedY *= -1;
-            }
-
-            // Flicker effect
-            particle.opacity = Math.random() * 0.2 + 0.5;
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particlesArray.forEach(particle => {
+            particle.update();
+            particle.draw();
         });
-
         requestAnimationFrame(animate);
     }
 
+    init();
     animate();
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    function typeEffect(element, text, speed = 50) {
-        let i = 0;
-        function type() {
-            if (i < text.length) {
-                element.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(type, speed);
-            }
-        }
-        type();
-    }
 
-    let visionMission = document.getElementById("vision-text");
-    if (visionMission) {
-        let text = "At ValoyItech, we envision a world where small businesses are empowered with reliable IT services that allow them to thrive in the digital age. Our mission is to help businesses of all sizes, but especially small ones, stay connected, expand their reach, and harness the power of technology to drive growth and success. We believe in creating scalable IT solutions that cater to the unique needs of small businesses. Whether it's through efficient networking, robust cybersecurity, or cutting-edge web design, we are committed to providing services that enhance connectivity, increase productivity, and ensure long-term success in an increasingly competitive environment. By helping businesses embrace technology, we aim to foster a community of thriving enterprises capable of accessing wider audiences, improving operational efficiency, and staying ahead in their industries.";
-        visionMission.innerHTML = ""; // Clear initial content
-        typeEffect(visionMission, text);
+  
+  document.addEventListener("DOMContentLoaded", function(){
+    // Canvas Animation (same as before)
+    const canvas = document.getElementById('missionCanvas');
+    const ctx = canvas.getContext('2d');
+    
+    function resizeCanvas() {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
     }
-});
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+    
+    let particlesArray = [];
+    const numberOfParticles = 50;
+    
+    class Particle {
+      constructor(){
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 1;
+        this.speedX = Math.random() * 1 - 0.5;
+        this.speedY = Math.random() * 1 - 0.5;
+      }
+      update(){
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if(this.x < 0 || this.x > canvas.width) this.speedX = -this.speedX;
+        if(this.y < 0 || this.y > canvas.height) this.speedY = -this.speedY;
+      }
+      draw(){
+        ctx.fillStyle = "#e91e63";
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+    
+    function initParticles(){
+      particlesArray = [];
+      for(let i = 0; i < numberOfParticles; i++){
+        particlesArray.push(new Particle());
+      }
+    }
+    
+    function animateParticles(){
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particlesArray.forEach(particle => {
+        particle.update();
+        particle.draw();
+      });
+      requestAnimationFrame(animateParticles);
+    }
+    
+    initParticles();
+    animateParticles();
+    
+    // JavaScript Typewriter Effect for Mission Text
+    const missionTextElement = document.getElementById('missionText');
+    const fullText = missionTextElement.innerHTML;
+    missionTextElement.innerHTML = ""; // Clear the content
+    let index = 0;
+    
+    function typeWriter() {
+      if (index < fullText.length) {
+        missionTextElement.innerHTML += fullText.charAt(index);
+        index++;
+        setTimeout(typeWriter, 40); // Adjust speed (40ms per character)
+      }
+    }
+    
+    typeWriter();
+  });
 
+  
