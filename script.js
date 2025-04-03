@@ -249,23 +249,3 @@ function animateCounters() {
 // Call the function when DOM is loaded
 document.addEventListener('DOMContentLoaded', animateCounters);
 
-// Form submission handling
-document.addEventListener('DOMContentLoaded', function() {
-  // Initialize EmailJS
-  (function() {
-    emailjs.init("2kWmZWDlgqbipEELd"); // Use your EmailJS Public Key here
-  })();
-
-  // Handle form submission
-  document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent default form submission
-    
-    // Send form data to EmailJS
-    emailjs.sendForm("service_xn1x4hk", "template_dd67mff", this)
-        .then(function(response) {
-            alert("Message sent successfully!");
-        }, function(error) {
-            alert("Failed to send message. Please try again.");
-        });
-  });
-});
