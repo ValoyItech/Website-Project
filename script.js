@@ -200,3 +200,72 @@ document.addEventListener("click", (event) => {
   });
 
   
+// Counter animation
+function animateCounters() {
+  const statsContainer = document.querySelector('.stats-container');
+  const statCounts = document.querySelectorAll('.stat-count');
+  let animated = false;
+
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  function updateCounters() {
+    if (!animated && isInViewport(statsContainer)) {
+      animated = true;
+      
+      statCounts.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        const duration = 2000; // Animation duration in ms
+        const step = target / (duration / 16); // 16ms per frame (roughly 60fps)
+        let current = 0;
+        
+        const counterInterval = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            counter.textContent = `${target}+`;
+            clearInterval(counterInterval);
+          } else {
+            counter.textContent = Math.floor(current);
+          }
+        }, 16);
+      });
+    }
+  }
+
+  // Initial check
+  updateCounters();
+  
+  // Check on scroll
+  window.addEventListener('scroll', updateCounters);
+}
+
+// Call the function when DOM is loaded
+document.addEventListener('DOMContentLoaded', animateCounters);
+
+// Form submission handling
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize EmailJS
+  (function() {
+    emailjs.init("2kWmZWDlgqbipEELd"); // Use your EmailJS Public Key here
+  })();
+
+  // Handle form submission
+  document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
+    
+    // Send form data to EmailJS
+    emailjs.sendForm("service_xn1x4hk", "template_dd67mff", this)
+        .then(function(response) {
+            alert("Message sent successfully!");
+        }, function(error) {
+            alert("Failed to send message. Please try again.");
+        });
+  });
+});
